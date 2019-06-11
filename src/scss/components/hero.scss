@@ -22,13 +22,13 @@ header {
 }
 
 .cc {
-    font-family: 'Larish';
+    font-family: 'Larish Neue Semibold';
     text-align: center;
     color: $white;
     text-transform: uppercase;
 
     &.cc-outline{
-        -webkit-text-stroke: 0.001em $white;
+        -webkit-text-stroke: 3px $white;
         color: rgba(255, 255, 255, 0);
     }
 }

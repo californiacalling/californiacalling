@@ -4,12 +4,6 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'Larish';
-  src: url("./fonts/larish_neue_semibold.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal; }
-
 body {
   margin: 0;
   padding: 0;
@@ -476,7 +470,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
 
 h1, h2, h3 {
-  font-family: 'Larish'; }
+  font-family: 'Larish Neue Semibold'; }
 
 @media (max-width: 991px) {
   h1 {
@@ -559,12 +553,12 @@ header {
   text-align: center; }
 
 .cc, .year {
-  font-family: 'Larish';
+  font-family: 'Larish Neue Semibold';
   text-align: center;
   color: #FFF;
   text-transform: uppercase; }
   .cc.cc-outline, .year {
-    -webkit-text-stroke: 0.001em #FFF;
+    -webkit-text-stroke: 3px #FFF;
     color: rgba(255, 255, 255, 0); }
 
 .hero-footer {

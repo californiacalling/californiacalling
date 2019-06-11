@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 
 function main() {
-  app.use(express.static(path.join(__dirname, '/dist')));
+  app.use(express.static(path.join(__dirname, '/docs')));
 
   nunjucks.configure('./src/views', {
     autoescape: true,
@@ -12,7 +12,7 @@ function main() {
   });
 
   app.get('/', function (req, res) {
-      res.sendFile(__dirname + '/dist/index.html');
+      res.sendFile(__dirname + '/docs/index.html');
     }
   )
 
