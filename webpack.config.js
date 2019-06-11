@@ -9,7 +9,7 @@ module.exports = [
     output: {
       publicPath: "./",
       filename: "bundle.js",
-      path: path.resolve(__dirname, "dist")
+      path: path.resolve(__dirname, "docs")
     },
 
     // target: "node",
@@ -39,7 +39,7 @@ module.exports = [
     output: {
       publicPath: "./",
       filename: "scripts.js",
-      path: path.resolve(__dirname, "dist")
+      path: path.resolve(__dirname, "docs")
     },
 
     watch: true,
