@@ -69,7 +69,7 @@ body {
     width: 16.66667%; } }
 
 @media (min-width: 992px) {
-  .desktop-col-5, .action img:nth-of-type(2), .action img:nth-of-type(6) {
+  .desktop-col-5, .action img:nth-of-type(2), .action img:nth-of-type(3), .action img:nth-of-type(6) {
     width: 20.83333%; } }
 
 @media (min-width: 992px) {
@@ -485,13 +485,13 @@ h1, h2, h3 {
 @media (min-width: 992px) {
   h1 {
     font-size: 7.5vw;
-    letter-spacing: -0.188vw;
-    line-height: 8.25vw; } }
+    letter-spacing: 0.063vw;
+    line-height: 6.250vw; } }
 
 @media (max-width: 991px) {
   h2 {
     font-size: 8.533vw;
-    letter-spacing: -0.133vw;
+    letter-spacing: 0.063vw;
     line-height: 9.600vw; } }
 
 @media (min-width: 992px) {
@@ -596,6 +596,10 @@ header {
     letter-spacing: -0.130vw;
     line-height: 8.333vw; } }
 
+@media (min-width: 992px) {
+  .story-copy h1 {
+    line-height: 8.25vw; } }
+
 .legend {
   position: relative;
   z-index: 4;
@@ -606,8 +610,11 @@ header {
       margin-top: -65vw; } }
   @media (min-width: 992px) {
     .legend {
-      margin-top: -55vw;
-      margin-bottom: 18.75vw; } }
+      margin-top: -40vw;
+      margin-bottom: 21.75vw; }
+      .legend p {
+        margin-top: 0;
+        margin-bottom: 0; } }
   .legend svg {
     width: 8%;
     margin: 0; }
@@ -616,7 +623,7 @@ header {
     margin-bottom: 6.4%; }
     @media (min-width: 992px) {
       .legend h1 {
-        margin-top: 1%;
+        margin-top: 1.25vw;
         margin-bottom: 3%; } }
 
 .legend-cell {
@@ -639,6 +646,7 @@ header {
       width: 1.5vw; }
     .legend-cell:first-of-type {
       margin-bottom: 25vw;
+      margin-top: 1.250vw;
       order: 2; }
     .legend-cell:last-of-type {
       margin-top: -44.688vw;
@@ -651,6 +659,9 @@ header {
   display: flex;
   flex-direction: column;
   z-index: 3; }
+  .action img {
+    width: auto;
+    height: auto; }
   .action img:first-child {
     margin-top: -12%;
     margin-bottom: 10.4%; }
@@ -785,8 +796,8 @@ header {
   z-index: -1; }
   @media (min-width: 992px) {
     .bear-content h3, .bear-content p:last-of-type {
-      -webkit-transform: translateY(-24.75vw);
-              transform: translateY(-24.75vw); } }
+      -webkit-transform: translateY(-16vw);
+              transform: translateY(-16vw); } }
   .bear-content img {
     margin: 17% 0; }
     @media (min-width: 992px) {
@@ -840,7 +851,8 @@ footer {
   text-align: center;
   white-space: nowrap;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  text-transform: uppercase; }
   @media (min-width: 992px) {
     .date-banner {
       width: 150vw;
@@ -915,20 +927,23 @@ footer {
 .legal {
   margin-top: 56px; }
 
+.footer-bottom p {
+  margin: 0; }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-bottom {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-between; }
-    .footer-bottom p {
-      margin: 0; } }
+    justify-content: space-between; } }
 
 @media (min-width: 992px) {
   .footer-bottom {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between; } }
+    justify-content: space-between; }
+    .footer-bottom .legal {
+      margin-top: 12.500vw; } }
 
 .map-wrap {
   position: relative;

@@ -5,6 +5,11 @@
     flex-direction: column;
     z-index: 3;
 
+    img {
+        width: auto;
+        height: auto;
+    }
+
     img:first-child {
         @extend .phone-col-8;
         @extend .offset-phone-col-3;
@@ -52,6 +57,7 @@
         @extend .offset-tablet-col-7;
         @extend .tablet-col-6;
         @extend .offset-desktop-col-19;
+        @extend .desktop-col-5;
 
         @include desktop {
             margin-bottom: 3.25vw;
@@ -109,7 +115,7 @@
         @extend .desktop-col-8;
         margin-bottom: -7%;
         order: 1;
-        
+
         @include desktop {
             margin-bottom: -3.5vw;
         }
@@ -120,7 +126,7 @@
     h1, p {
         @extend .offset-phone-col-2;
         @extend .phone-col-8;
-       @extend .offset-desktop-col-8;
+        @extend .offset-desktop-col-8;
     }
 
     h1 {

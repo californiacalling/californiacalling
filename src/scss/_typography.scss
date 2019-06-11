@@ -20,15 +20,15 @@ h1 {
 
     @include desktop {
         font-size: 7.5vw;
-        letter-spacing: -0.188vw;
-        line-height: 8.25vw;
+        letter-spacing: 0.063vw;
+        line-height: 6.250vw;
     }
 }
 
 h2 {
     @include phone {
         font-size: 8.533vw;
-        letter-spacing: -0.133vw;
+        letter-spacing: 0.063vw;
         line-height: 9.600vw;
     }
 

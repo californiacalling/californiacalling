@@ -16,6 +16,7 @@ footer {
     white-space: nowrap;
     display: flex;
     flex-direction: row;
+    text-transform: uppercase;
 
     @include desktop {
         width: 150vw;
@@ -117,15 +118,16 @@ footer {
 }
 
 .footer-bottom {
+    p {
+        margin: 0;
+    }
 
     @include tablet {
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-between;
 
-        p {
-            margin: 0;
-        }
+
     }
 
     @include desktop {
@@ -133,5 +135,9 @@ footer {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
+
+        .legal {
+            margin-top: 12.500vw;
+        }
     }
 }
