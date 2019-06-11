@@ -1,0 +1,35 @@
+button {
+    font-family: 'WorkSans';
+    background-color: transparent;
+    color: $white;
+    border: 1px solid $light-gray;
+    letter-spacing: -0.5px;
+    text-align: center;
+    transition: 0.5s;
+
+    @include phone {
+        padding: 19.5px 21px;
+        font-size: 4.267vw;
+        letter-spacing: -0.133vw;
+        line-height: 6.400vw;
+    }
+
+    @include tablet {
+        padding: 1.302vw 4.297vw;
+        font-size: 3.125vw;
+    }
+
+    @include desktop {
+        padding: 19.5px 42px;
+        font-size: 1.500vw;
+        letter-spacing: -0.031vw;
+        line-height: 1.750vw;
+    }
+
+    &:hover {
+        background-color: $white;
+        border: 1px solid $white;
+        color: $black;
+
+    }
+}

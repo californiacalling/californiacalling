@@ -1,0 +1,102 @@
+.bear-content {
+    position: relative;
+    z-index: -1;
+
+    h1, p, h3 {
+        @extend .phone-col-8;
+        @extend .offset-phone-col-2;
+    }
+
+    p:first-of-type {
+        @extend .offset-desktop-col-2;
+        @extend .desktop-col-1;
+    }
+
+    h1 {
+        @extend .offset-desktop-col-2;
+        @extend .desktop-col-6;
+    }
+
+    h3, p:last-of-type {
+        @extend .offset-desktop-col-12;
+        @extend .desktop-col-10;
+        @include desktop {
+            transform: translateY(-24.750vw);
+        }
+    }
+
+    img {
+        margin: 17% 0;
+
+        &.shirt {
+            @extend .offset-phone-col-2;
+            @extend .phone-col-8;
+            @extend .offset-desktop-col-2;
+            @extend .desktop-col-14;
+        }
+
+        @include desktop {
+            margin: 0;
+
+            &.shirt {
+                transform: translateY(-12.75vw);
+            }
+        }
+    }
+
+    @include tablet {
+            h3 {
+                font-size: 4.688vw;
+                letter-spacing: -0.065vw;
+                line-height: 5.208vw;
+            }
+    }
+
+}
+
+.rosebear {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    .bear-content {
+        margin-top: -50vw;
+
+        @include tablet {
+            margin-top: -50vw;
+        }
+
+        @include desktop {
+            margin-top: -29.750vw;
+
+            .shirt {
+                margin-top: -55vw;
+            }
+
+            .bears-carousel {
+                z-index: 4;
+                transform: translateY(-24vw);
+                margin-bottom: -5vw;
+            }
+        }
+
+        h1 {
+            @extend .phone-col-7;
+        }
+
+        .shirt {
+            @extend .offset-desktop-col-8;
+
+        }
+
+        .bears-carousel {
+            @extend .offset-desktop-col-2;
+        }
+    }
+
+    @include desktop {
+        margin-bottom: -7vw;
+    }
+}
+
+
+

@@ -1,0 +1,52 @@
+.wrapper {
+    background: black;
+    position: relative;
+    @extend .center-all;
+    @extend .column;
+    padding: 40px 0;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    @extend .center-all;
+    height: 100vh;
+}
+
+.hero {
+    @extend .phone-col-10;
+    color: $white;
+    @extend .center-all;
+    @extend .column;
+    text-align: center;
+}
+
+.cc {
+    font-family: 'Larish';
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+
+    &.cc-outline{
+        -webkit-text-stroke: 0.001em $white;
+        color: rgba(255, 255, 255, 0);
+    }
+}
+
+
+
+.hero-footer{
+    @extend .phone-col-10;
+    @extend .desktop-col-20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 40px;
+}
+
+.bear {
+    width: 53px;
+    height: 29px;
+}

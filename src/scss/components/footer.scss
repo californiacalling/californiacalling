@@ -1,0 +1,137 @@
+footer {
+    @extend .black;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-banner {
+    background-color: $off-white;
+    color: $black;
+    transform: rotate(45deg);
+    padding: 8px 0;
+    width: 150%;
+    margin-top: 10vh;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+
+    @include desktop {
+        width: 150vw;
+        margin-top: 18vw;
+    }
+}
+
+.year {
+    @extend .cc;
+    @extend .cc-outline;
+    -webkit-text-stroke-color: $black;
+}
+
+.date-list {
+    padding-right: 1.5vw;
+    animation: ticker 15s infinite linear;
+}
+
+@keyframes ticker {
+    100%{
+        transform: translateX(-100%)
+    }
+}
+
+.foot-content {
+    @extend .center-all;
+    @extend .column;
+    @extend .phone-col-10;
+    @extend .offset-phone-col-1;
+    @extend .tablet-col-8;
+    @extend .offset-desktop-col-2;
+    padding-top: $space-xl*3;
+    padding-bottom: $space-xl;
+    text-align: center;
+
+    @include tablet {
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    @include desktop {
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    h2 {
+        @extend .desktop-col-11;
+
+        @include phone {
+            margin: $space-sm 0;
+        }
+
+        @include tablet {
+            font-size: 6.771vw;
+            letter-spacing: -0.130vw;
+            line-height: 7.292vw;
+            margin-bottom: 7.292vw;
+        }
+
+        @include desktop {
+            margin-top: 1.500vw;
+            margin-bottom: 3.500vw;
+        }
+    }
+}
+
+.sponsor-logos {
+    @extend .center-all;
+    @extend .column;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        align-self: flex-end;
+        margin-right: 8.33333%;
+    }
+
+    img {
+        margin: $space-lg 0 0 0;
+
+        @include tablet {
+            margin: $space-lg $space-md 0 0;
+        }
+
+        @include desktop {
+            margin: 0 2.625vw 0 0;
+        }
+    }
+}
+
+.legal {
+    margin-top: $space-lg;
+}
+
+.footer-bottom {
+
+    @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    @include desktop {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,17 @@
+//== Media queries breakpoints
+//
+$tablet: 768px; // medium devices (tablets)
+$desktop: 992px; // large devices (desktop)
+$xl-desktop: 1200px; // extra large devices (desktop)
+$xxl-desktop: 1600px; // extra large devices (wide desktop)
+
+// ADD CUSTOM BREAKPOINTS BELOW
+// i.e. if you have any breakpoints for small phones or very large screens
+
+//== Spacing ==//
+$space-base: 8px;
+$space-xs: $space-base * 2;
+$space-sm: $space-base * 3;
+$space-md: $space-base * 5;
+$space-lg: $space-base * 7;
+$space-xl: $space-base * 10;

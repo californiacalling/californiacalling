@@ -1,0 +1,16 @@
+    <div class="map-wrap parallax__layer parallax__layer--back">
+        <div class='map'>
+        {# focus on this after other styling is complete #}
+            {% include '../../content/images/california.svg' %}
+        </div>
+        {% for i in range(0, 25) -%}
+            <div id="fire-{{ i }}" class="wildfire">
+                {% include '../../content/images/triangle.svg' %}
+            </div>
+        {%- endfor %}
+        {% for i in range(0, 2) -%}
+            <div id="{{ 'LA' if i===1 else 'SF'}}" class="office">
+                {% include '../../content/images/dot.svg' %}
+            </div>
+        {%- endfor %}
+    </div>

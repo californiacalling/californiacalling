@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'WorkSans';
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    svg {
+        width: 1px;
+        height: 50vh;
+    }
+}
+
+.black {
+    background-color:$black;
+    color: $white;
+}
+
+.flex {
+    display: flex;
+}
+
+.center-all {
+    @extend .flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.md-hidden {
+    @include tablet {
+        display: none;
+    }
+}
+
+.sm-hidden {
+    @include phone {
+        display: none;
+    }
+}
+
+.lg-hidden {
+    @include desktop {
+        display: none;
+    }
+}

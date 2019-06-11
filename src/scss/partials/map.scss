@@ -1,0 +1,161 @@
+.map-wrap {
+    @extend .offset-phone-col-1;
+    @extend .offset-desktop-col-8;
+    @extend .desktop-col-14;
+    position: relative;
+    margin-top: $space-sm;
+
+    @include phone {
+        width: 134%;
+    }
+
+    @include tablet {
+        margin-left: 0;
+        width: 120%;
+    }
+}
+
+.wildfire, .office {
+    position: absolute;
+    opacity: 0;
+    svg {
+        width: 3.5vw;
+    }
+
+    @include desktop {
+        svg {
+            width: 1.5vw;
+        }
+    }
+}
+
+// Offices positions
+#SF {
+    top: 44.5%;
+    left: 15%;
+}
+
+#LA {
+    top: 83.75%;
+    left: 54.75%;
+}
+
+
+// Fires left positions
+#fire-0, #fire-1, #fire-3, #fire-4 {
+    left: 18.5%;
+}
+
+#fire-2, #fire-19 {
+    left: 34.4%;
+}
+
+#fire-5, #fire-6, #fire-14, #fire-15, #fire-16 {
+    left: 21.25%;
+}
+
+#fire-9, #fire-10, #fire-11 {
+    left: 11.25%;
+}
+
+#fire-12, #fire-13 {
+    left: 14%;
+}
+
+#fire-18 {
+    left: 41.5%;
+}
+
+#fire-20 {
+    left: 45.25%;
+}
+
+#fire-21, #fire-22, #fire-23 {
+    left: 48%;
+}
+
+#fire-17 {
+    left: 38.75%;
+}
+
+#fire-24 {
+    left: 50.5%;
+}
+
+// Fires top positions
+#fire-0 {
+    top: 0;
+}
+
+#fire-1 {
+    top: 2%;
+}
+
+#fire-2 {
+    top: 6.4%;
+}
+
+#fire-3, #fire-5 {
+    top: 11%
+}
+
+#fire-4, #fire-6 {
+    top: 13%;
+}
+
+#fire-7, #fire-8 {
+    left: 25%;
+}
+
+#fire-7 {
+    top: 25%;
+}
+
+#fire-8, #fire-9 {
+    top: 27%;
+}
+
+#fire-10, #fire-12 {
+    top: 29%;
+}
+
+#fire-11, #fire-13 {
+    top: 31%;
+}
+
+#fire-14 {
+    top: 33.5%;
+}
+
+#fire-15 {
+    top: 35.5%;
+}
+
+#fire-16, #fire-17, #fire-18 {
+    top: 37.5%;
+}
+
+#fire-19, #fire-20, #fire-21 {
+    top: 44.5%;
+}
+
+#fire-22 {
+    top: 79.25%;
+}
+
+#fire-23, #fire-24 {
+    top: 81.25%;
+}
+
+@keyframes animate-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-in {
+    animation: animate-in 0.4s linear forwards;
+}

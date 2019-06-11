@@ -1,0 +1,71 @@
+.goldenbear {
+    @extend .black;
+    overflow-x: hidden;
+    padding-top: 25%;
+    margin-bottom: 25%;
+
+    .bear-content {
+        color: $white;
+        overflow-y: visible;
+        z-index: 2;
+        margin-bottom: -25%;
+    }
+
+    @include desktop {
+        padding-top: 11.250vw;
+
+        .bears-carousel {
+            margin-left: 62.5%;
+            margin-top:-65vw;
+        }
+    }
+}
+
+.spin-wrap {
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    height: 30vh;
+    background-color: white;
+    z-index: 1;
+
+    @include tablet {
+        height: 40vh;
+    }
+
+    @include desktop {
+        height: 31.250vw;
+        margin-bottom: -1px;
+    }
+
+}
+
+.cc-spin {
+    position: absolute;
+    margin-top: -20%;
+    margin-left: 64%;
+    width: 65%;
+    z-index: 0;
+    animation: spin;
+    animation-duration: 15000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  
+
+    @include desktop {
+        width: 31.250vw;
+        margin-top: -7vw;
+        margin-left: 79.16667%;
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+

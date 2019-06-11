@@ -1,0 +1,62 @@
+.bears-carousel {
+    margin: 17% 0;
+    clear: both;
+    @extend .desktop-col-7;
+
+
+
+    .slick-slide {
+        height: auto;
+        margin: 0 $space-sm;
+
+        @include tablet {
+            margin: 0 $space-md;
+        }
+
+        @include desktop {
+            height: auto;
+            margin: 0;
+        }
+    }
+
+    .slick-prev, .slick-next {
+        border: none;
+        margin-bottom: 2.500vw;
+        width: 3.813vw;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.goldenbear {
+    .slick-next {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .slick-prev {
+        margin-left: 19.8vw;
+    }
+}
+
+.rosebear {
+
+    .slick-next, .slick-prev {
+        #CC-v6-Desktop {
+            fill: $black;
+        }
+    }
+    .slick-next {
+        position: absolute;
+        top: 0;
+        right: 19.8vw;
+    }
+
+    .slick-prev {
+        margin-left: 0;
+    }
+}
+

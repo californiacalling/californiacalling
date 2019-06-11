@@ -1,0 +1,45 @@
+$grid-columns: 24;
+
+@for $i from 1 through $grid-columns {
+    .desktop-col-#{$i} {
+        @include desktop {
+            width: percentage($i / $grid-columns);
+        }
+    }
+}
+
+@for $i from 1 through ($grid-columns/2) {
+    .phone-col-#{$i} {
+        @include phone {
+            width: percentage($i / ($grid-columns/2));
+        }
+    }
+
+    .tablet-col-#{$i} {
+        @include tablet {
+            width: percentage($i / ($grid-columns/2)) !important;
+        }
+    }
+}
+
+@for $i from $grid-columns through 1 {
+    .offset-desktop-col-#{$i} {
+        @include desktop {
+            margin-left: percentage($i / $grid-columns);
+        }
+    }
+}
+
+@for $i from $grid-columns/2 through 1 {
+    .offset-phone-col-#{$i} {
+    @include phone {
+            margin-left: percentage($i / ($grid-columns/2));
+        }
+    }
+
+    .offset-tablet-col-#{$i} {
+        @include tablet {
+            margin-left: percentage($i / ($grid-columns/2)) !important;
+        }
+    }
+}

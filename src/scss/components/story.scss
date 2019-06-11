@@ -1,0 +1,116 @@
+.story {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding-top: 150px;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.story-copy, .legend {
+    @extend .offset-phone-col-2;
+    @extend .offset-desktop-col-2;
+}
+
+.story-copy {
+    @extend .phone-col-8;
+    @extend .desktop-col-20;
+
+    @include phone {
+        h1 {
+            font-size: 8.533vw;
+            letter-spacing: -0.133vw;
+            line-height: 9.600vw;
+        }
+    }
+
+    @include tablet {
+        h1 {
+            font-size: 6.771vw;
+            letter-spacing: -0.130vw;
+            line-height: 8.333vw;
+        }
+    }
+}
+
+.legend {
+    @extend .flex;
+    @extend .column;
+    position: relative;
+    z-index: 4;
+    margin-top: -75vw;
+    margin-bottom: 25vw;
+
+    @include tablet {
+        margin-top: -65vw;
+    }
+
+    @include desktop {
+        margin-top: -55vw;
+        margin-bottom: 18.75vw;
+    }
+
+    svg {
+        width: 8%;
+        margin: 0;
+    }
+
+    h1 {
+        margin-top: 2.1%;
+        margin-bottom: 6.4%;
+
+        @include desktop {
+            margin-top: 1%;
+            margin-bottom: 3%;
+        }
+    }
+}
+
+.legend-cell {
+    @extend .flex;
+    align-items: center;
+
+    p {
+        margin-left: 2.1%;
+        @extend .phone-col-1;
+        @extend .tablet-col-12;
+    }
+    
+    &:last-of-type {
+        margin-bottom: 6.4%;
+    }
+
+    @include tablet {
+        svg {
+            width: 2.5vw;
+        }
+        &:first-of-type {
+            margin-bottom: 45vw; 
+        }
+
+        &:last-of-type {
+            margin-top: -40vw;
+            margin-bottom: 0;
+            order: -1;
+        }
+    }
+
+    @include desktop {
+        svg {
+            width: 1.5vw;
+        }
+        &:first-of-type {
+            margin-bottom: 25vw;
+            order: 2;
+        }
+
+        &:last-of-type {
+            margin-top: -44.688vw;
+            margin-bottom: 0;
+            order: 1;
+        }
+    }
+}
