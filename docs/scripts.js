@@ -192,6 +192,18 @@ $(document).ready(function () {
   ticker.append(clone);
 
   window.onscroll = function () {
+    if ($(window).scrollTop() >= $('.story').offset().top - 50 && $(window).scrollTop() <= $('.foot-content').offset().top) {
+      $('.cta').css({
+        marginBottom: 0,
+        transition: '0.5s'
+      });
+    } else {
+      $(".cta").css({
+        marginBottom: '-4.1vw',
+        transition: '0.5s'
+      });
+    }
+
     if ($(window).scrollTop() >= $('.map-wrap').offset().top - 50) {
       showFires();
 

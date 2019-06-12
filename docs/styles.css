@@ -24,10 +24,10 @@ body {
   background-color: #000;
   color: #FFF; }
 
-.flex, .center-all, .wrapper, header, .hero, .foot-content, .sponsor-logos, .legend, .legend-cell {
+.flex, .center-all, .wrapper, header, .hero, .foot-content, .sponsor-logos, .cta, .legend, .legend-cell {
   display: flex; }
 
-.center-all, .wrapper, header, .hero, .foot-content, .sponsor-logos {
+.center-all, .wrapper, header, .hero, .foot-content, .sponsor-logos, .cta {
   justify-content: center;
   align-items: center; }
 
@@ -538,6 +538,10 @@ p {
       letter-spacing: 0px;
       line-height: 1.250vw; } }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .wrapper {
   background: black;
   position: relative;
@@ -724,7 +728,7 @@ header {
     margin-top: -1.5vw; } }
 
 .goldenbear {
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: 25%;
   margin-bottom: 25%; }
   .goldenbear .bear-content {
@@ -1066,6 +1070,20 @@ footer {
 .animate-in {
   -webkit-animation: animate-in 0.4s linear forwards;
           animation: animate-in 0.4s linear forwards; }
+
+.cta {
+  height: 4vw;
+  width: 100vw;
+  background-color: #000;
+  color: #FFF;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  margin-bottom: -4.1vw; }
+  .cta p {
+    margin-left: 1.500vw; }
 
 .bears-carousel {
   margin: 17% 0;

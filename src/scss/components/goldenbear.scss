@@ -1,6 +1,6 @@
 .goldenbear {
     @extend .black;
-    overflow-x: hidden;
+    overflow: hidden;
     padding-top: 25%;
     margin-bottom: 25%;
 
@@ -19,6 +19,7 @@
             margin-top:-65vw;
         }
     }
+
 }
 
 .spin-wrap {
@@ -50,7 +51,7 @@
     animation: spin;
     animation-duration: 15000ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;  
+    animation-timing-function: linear;
 
     @include desktop {
         width: 31.250vw;

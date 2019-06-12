@@ -1,0 +1,16 @@
+.cta {
+    height: 4vw;
+    width: 100vw;
+    background-color: $black;
+    color: $white;
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    margin-bottom: -4.1vw;
+    @extend .center-all;
+    p {
+        margin-left: 1.500vw;
+    }
+}
