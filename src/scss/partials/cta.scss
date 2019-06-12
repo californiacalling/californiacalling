@@ -1,16 +1,67 @@
 .cta {
-    height: 4vw;
     width: 100vw;
     background-color: $black;
     color: $white;
     border-top: 1px solid $light-gray;
-    border-bottom: 1px solid $light-gray;
     position: fixed;
     bottom: 0;
     z-index: 5;
-    margin-bottom: -4.1vw;
     @extend .center-all;
+    height: 17.067vw;
+    margin-bottom: -17.067vw;
+    transition: 0.5s;
+
     p {
-        margin-left: 1.500vw;
+        margin-left: 4.267vw;
+    }
+
+    .bear {
+        svg {
+            width: 10.933vw;
+        }
+    }
+
+    @include tablet {
+        height: 8.333vw;
+        margin-bottom: -8.333vw;
+
+        p {
+            margin-left: 3.125vw;
+        }
+
+        .bear {
+            svg {
+                width: 7.031vw;
+            }
+        }
+    }
+
+    @include desktop {
+        height: 4vw;
+        margin-bottom: -4.1vw;
+
+        p {
+            margin-left: 1.500vw;
+        }
+
+        .bear {
+            svg {
+                width: 3.375vw;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $white;
+        border-top: 1px solid $white;
+        color: $black;
+
+        .bear {
+            svg {
+                #CC-v4 {
+                    fill: $black;
+                }
+            }
+        }
     }
 }

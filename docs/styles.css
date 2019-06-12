@@ -1072,18 +1072,42 @@ footer {
           animation: animate-in 0.4s linear forwards; }
 
 .cta {
-  height: 4vw;
   width: 100vw;
   background-color: #000;
   color: #FFF;
   border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
   position: fixed;
   bottom: 0;
   z-index: 5;
-  margin-bottom: -4.1vw; }
+  height: 17.067vw;
+  margin-bottom: -17.067vw;
+  transition: 0.5s; }
   .cta p {
-    margin-left: 1.500vw; }
+    margin-left: 4.267vw; }
+  .cta .bear svg {
+    width: 10.933vw; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .cta {
+      height: 8.333vw;
+      margin-bottom: -8.333vw; }
+      .cta p {
+        margin-left: 3.125vw; }
+      .cta .bear svg {
+        width: 7.031vw; } }
+  @media (min-width: 992px) {
+    .cta {
+      height: 4vw;
+      margin-bottom: -4.1vw; }
+      .cta p {
+        margin-left: 1.500vw; }
+      .cta .bear svg {
+        width: 3.375vw; } }
+  .cta:hover {
+    background-color: #FFF;
+    border-top: 1px solid #FFF;
+    color: #000; }
+    .cta:hover .bear svg #CC-v4 {
+      fill: #000; }
 
 .bears-carousel {
   margin: 17% 0;
