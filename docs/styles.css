@@ -1089,7 +1089,7 @@ footer {
   @media (min-width: 768px) and (max-width: 991px) {
     .cta {
       height: 8.333vw;
-      margin-bottom: -8.333vw; }
+      margin-bottom: -8.4vw; }
       .cta p {
         margin-left: 3.125vw; }
       .cta .bear svg {
@@ -1097,17 +1097,23 @@ footer {
   @media (min-width: 992px) {
     .cta {
       height: 4vw;
-      margin-bottom: -4.1vw; }
+      margin-bottom: -4.2vw; }
       .cta p {
         margin-left: 1.500vw; }
       .cta .bear svg {
         width: 3.375vw; } }
   .cta:hover {
     background-color: #FFF;
-    border-top: 1px solid #FFF;
+    border-top: 1px solid #000;
     color: #000; }
     .cta:hover .bear svg #CC-v4 {
       fill: #000; }
+  .cta:hover {
+    background-color: #000;
+    border-top: 1px solid #AAA;
+    color: #FFF; }
+    .cta:hover .bear svg #CC-v4 {
+      fill: #FFF; }
 
 .bears-carousel {
   margin: 17% 0;

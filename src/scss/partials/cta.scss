@@ -23,7 +23,7 @@
 
     @include tablet {
         height: 8.333vw;
-        margin-bottom: -8.333vw;
+        margin-bottom: -8.4vw;
 
         p {
             margin-left: 3.125vw;
@@ -38,7 +38,7 @@
 
     @include desktop {
         height: 4vw;
-        margin-bottom: -4.1vw;
+        margin-bottom: -4.2vw;
 
         p {
             margin-left: 1.500vw;
@@ -53,13 +53,27 @@
 
     &:hover {
         background-color: $white;
-        border-top: 1px solid $white;
+        border-top: 1px solid $black;
         color: $black;
 
         .bear {
             svg {
                 #CC-v4 {
                     fill: $black;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $black;
+        border-top: 1px solid $light-gray;
+        color: $white;
+
+        .bear {
+            svg {
+                #CC-v4 {
+                    fill: $white;
                 }
             }
         }

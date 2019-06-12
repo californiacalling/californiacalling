@@ -94,6 +94,33 @@ $(document).ready(function(){
 
     ticker.append(clone);
 
+  //   const desktop = $(window).width() >= 992;
+  //   const tablet = $(window).width() >= 769 && $(window).width() <= 991;
+  //   const phone = $(window).width() <= 768;
+
+  //   function checkSize() {
+  //     if ($(window).height() <= 600 && desktop){
+  //       $('.hero-footer').hide();
+  //     }
+  //     if ($(window).height() <= 750 && tablet){
+  //       $(".hero-footer").hide();
+  //     } 
+      
+  //     if ($(window).height() <= 675 && phone){
+  //       $(".hero-footer").hide();
+  //     } else {
+  //       $('.hero-footer').show();
+  //     }
+  //   }
+
+    // checkSize();
+
+    // $(window).on('resize', function () {
+    //   checkSize();
+    // })
+
+
+    // scroll behavior
     window.onscroll = function() {
       if ($(window).scrollTop() >= ($('.story').offset().top - 50) && ($(window).scrollTop() <= ($('.foot-content').offset().top - 400))){
         $('.cta').css({marginBottom: 0, transition: '0.5s'})
