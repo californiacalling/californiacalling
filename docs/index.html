@@ -11,6 +11,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
 </head>
 
@@ -28,13 +30,8 @@
     </g>
 </svg>
     </div>
-    
-
-
-<header>
+    <header>
     <section class='hero'>
-        
-
         <div class='wrapper'>
             <p id="ele">Elephant presents</p>
                 <h1 id="ca" class='cc'>California</h1>
@@ -59,11 +56,11 @@
         </div>
     </section>
 </header>
-    <section class='story'>
-        <div class='story-copy parallax__layer parallax__layer--base'>
-            <h1>Last year, nearly 2 million acres were devastated by the deadliest, most destructive wildfires in California history.</h1>
+    <section id="story-wrap" class='story'>
+        <div class='story-copy'>
+            <h1 id="story">Last year, nearly 2 million acres were devastated by the deadliest, most destructive wildfires in California history.</h1>
         </div>
-            <div class="map-wrap parallax__layer parallax__layer--back">
+            <div id="map" class="map-wrap">
         <div class='map'>
         
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 918 1112">
@@ -230,30 +227,30 @@
         </aside>
 </section>
     <section class="action">
-    <img class="action-img" src='./images/action1.png'/>
-    <img class="action-img" src='./images/action2.png'/>
+    <img id="action1" src='./images/action1.png'/>
+    <img id="action2" src='./images/action2.png'/>
     <div class='action-copy-1'>
         <h1>Stuck in <br class="md-hidden"/>the middle.</h1>
         <p>Surrounded by smoke and inspired by the communities’ resilience, our design team reimagined the California Grizzly and used it to create custom tees, pins, and posters.</p>
     </div>
-    <img class="action-img" src='./images/action3.png'/>
-    <img class="action-img" src='./images/action4.png'/>
-    <img class="action-img" src='./images/action5.png'/>
+    <img id="action3" src='./images/action3.png'/>
+    <img id="action4" src='./images/action4.png'/>
+    <img id="action5" src='./images/action5.png'/>
         <div class='action-copy-2'>
             <p>We’ll be giving away pins and posters at our pop-up shop during the SF Design Week Studio Crawl on June 21. T-shirt designs will be available for purchase and we’re letting you choose what you pay. Proceeds will go to help the communities who were displaced as a result of the wildfires.</p>
         </div>
-    <img class="action-img" src='./images/action6.png'/>
+    <img id="action6" src='./images/action6.png'/>
 
-    <img class="action-img" src='./images/action7.png'/>
+    <img id="action7" src='./images/action7.png'/>
 </section>
-    <section class='goldenbear'>
+    <section id="goldenbear" class='goldenbear'>
     <div class="bear-content">
         <p>001</p>
         <h1>The Golden Bear</h1>
         <img class="shirt lg-hidden" src='./images/goldenbear.png'/>
         <h3>This design is all about the resilience of California to overcome difficult situations and come out stronger than before. It’s a flip of the UNC Tarheel mascot with added elements like the California poppy.</h3>
         <p>&#8212; Kevin, Designer at Elephant</p>
-        <img class="shirt sm-hidden" src='./images/goldenbear.png'/>
+        <img id="gbc" class="shirt sm-hidden" src='./images/goldenbear.png'/>
         <div class="bears-carousel">
             <img src='./images/bianca.png'/>
             <img src='./images/bianca.png'/>
@@ -279,13 +276,13 @@
         <img class="shirt sm-hidden" src='./images/rosebear.png'/>
     </div>
 </section>
-    <footer>
+    <footer id="footer">
     <section class="date-banner">
         <h1 class="date-list">June  21, <span class="year">2019</span> June  21, <span class="year">2019</span> June  21, <span class="year">2019</span></h1>
     </section>
     <section class="foot-content">
-        <p>Come party with us</p>
-        <h2>Mark your calendar for our SF Design Week Studio Crawl. In addition to custom swag, we’ll also have a DJ, a mixologist, and other cool surprises we can’t tell you about yet.</h2>
+        <p id="party">Come party with us</p>
+        <h2 id="foot-copy">Mark your calendar for our SF Design Week Studio Crawl. In addition to custom swag, we’ll also have a DJ, a mixologist, and other cool surprises we can’t tell you about yet.</h2>
         <button><a href="https://www.eventbrite.com/e/elephant-studio-crawl-san-francisco-design-week-2019-tickets-63313109214" target="_blank">Go to event page</a></button>
         <div class='footer-bottom'>
             <div class="sponsor-logos">

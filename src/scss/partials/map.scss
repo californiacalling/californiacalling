@@ -3,6 +3,7 @@
     @extend .offset-desktop-col-8;
     @extend .desktop-col-14;
     position: relative;
+    z-index: 4;
     margin-top: $space-sm;
 
     @include phone {
@@ -17,6 +18,7 @@
 
 .wildfire, .office {
     position: absolute;
+    z-index: 5;
     opacity: 0;
     svg {
         width: 3.5vw;

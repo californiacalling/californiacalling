@@ -103,8 +103,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
 
 
+ // import { ScrollMagic } from './vendors/ScrollMagic.min.js';
 
 $(document).ready(function () {
+  var controller = new ScrollMagic.Controller();
+  console.log(controller); // word animations
+
   var california = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#ca", {
     type: "words,chars",
     position: "absolute"
@@ -155,6 +159,7 @@ $(document).ready(function () {
     autoAlpha: 0,
     marginTop: '1%'
   });
+  ;
   tl.staggerTo([california.chars, calling.chars], 1, {
     top: 0
   }).staggerTo([california.words, calling.words], 0.25, {
@@ -190,6 +195,83 @@ $(document).ready(function () {
   }
 
   tl.restart();
+  var storyCopy = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#story", {
+    type: "words,lines"
+  });
+  var newtl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(storyCopy.lines, {
+    autoAlpha: 0,
+    marginTop: '1%'
+  });
+  newtl.staggerTo(storyCopy.lines, 3, {
+    marginTop: 0,
+    autoAlpha: 1
+  }, 0.3, endStory);
+
+  function endStory() {
+    storyCopy.revert();
+    $('.story-copy').removeAttr('style');
+  }
+
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#story-wrap"
+  }).setTween(newtl).addTo(controller);
+  var mapTween = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]().add([gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#map", 1, {
+    marginTop: '15vw'
+  }, {
+    marginTop: '-20vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#legend", 1, {
+    marginTop: '20vw'
+  }, {
+    marginTop: '-15vw',
+    ease: Linear.easeNone
+  })]);
+  var mapScene = new ScrollMagic.Scene({
+    triggerElement: "#story",
+    duration: 1500
+  }).setTween(mapTween).addTo(controller);
+  var actionTween = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]().add([gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action1", 1, {
+    marginTop: '-5vw'
+  }, {
+    marginTop: '-15vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action2", 1, {
+    marginTop: '15vw'
+  }, {
+    marginTop: '-20vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action3", 1, {
+    marginTop: '-6.5vw'
+  }, {
+    marginTop: '-20vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action4", 1, {
+    marginTop: '0vw'
+  }, {
+    marginTop: '-2vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action5", 1, {
+    marginTop: '-3vw'
+  }, {
+    marginTop: '-15vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action6", 1, {
+    marginTop: '-12vw'
+  }, {
+    marginTop: '-19vw',
+    ease: Linear.easeNone
+  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action7", 1, {
+    marginBottom: '-7vw'
+  }, {
+    marginTop: '-3.5vw',
+    ease: Linear.easeNone
+  })]);
+  var actionScene = new ScrollMagic.Scene({
+    triggerElement: "#damage-num",
+    duration: 1500
+  }).setTween(actionTween).addTo(controller); // bear carousels
+
   $(".bears-carousel").slick({
     arrows: true,
     prevArrow: '<svg class="slick-prev" viewBox="0 0 61 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Group 5 Copy 2</title><desc>Created with Sketch.</desc><g id="2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="CC-v6-Desktop" transform="translate(-1329.000000, -5952.000000)" fill="#FFFFFF"><g id="Shirts" transform="translate(0.000000, 5232.000000)"><g id="Group-5-Copy-2" transform="translate(1329.000000, 720.000000)"><g id="Group-3"><rect id="Rectangle" x="0" y="25.2460385" width="60.8780488" height="1.77560976"></rect><polygon id="Rectangle" transform="translate(13.294013, 13.570732) rotate(-315.000000) translate(-13.294013, -13.570732) " points="12.4770836 -4.25624103 14.2601539 -4.26370158 14.110943 31.3977044 12.3278727 31.405165"></polygon><polygon id="Rectangle-Copy-2" transform="translate(13.294013, 38.429268) scale(1, -1) rotate(-315.000000) translate(-13.294013, -38.429268) " points="12.4770836 20.6022956 14.2601539 20.594835 14.110943 56.256241 12.3278727 56.2637016"></polygon></g></g></g></g></g></svg>',
@@ -214,6 +296,36 @@ $(document).ready(function () {
       }
     }]
   });
+  var foot = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#foot-copy", {
+    type: "words,lines"
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(foot.lines, {
+    autoAlpha: 0,
+    marginTop: '1%'
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set('#party', {
+    autoAlpha: 0,
+    marginTop: '1%'
+  });
+  var foottl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
+  foottl.to(party, 1, {
+    autoAlpha: 1,
+    marginTop: 0,
+    ease: Power1.easeInOut
+  }, 0.25).staggerTo(foot.lines, 2, {
+    autoAlpha: 1,
+    marginTop: 0,
+    ease: Power1.easeInOut
+  }, 0.5, 0, footDone);
+
+  function footDone() {
+    foot.revert();
+  }
+
+  var footScene = new ScrollMagic.Scene({
+    triggerElement: "#footer"
+  }).setTween(foottl).addTo(controller); // map animations
+
   const wildfires = $('.wildfire');
   const offices = $('.office');
 
@@ -249,7 +361,8 @@ $(document).ready(function () {
   function showFires() {
     staggerIn(offices);
     staggerIn(wildfires);
-  }
+  } // CountUp numbers
+
 
   var ranges = [{
     divider: 1000000000,
@@ -273,12 +386,7 @@ $(document).ready(function () {
 
       return n.toString();
     }
-  }; // date-banner animation
-
-  var ticker = $(".date-banner");
-  var list = $(".date-list");
-  var clone = list.clone(true);
-  ticker.append(clone); //   const desktop = $(window).width() >= 992;
+  }; //   const desktop = $(window).width() >= 992;
   //   const tablet = $(window).width() >= 769 && $(window).width() <= 991;
   //   const phone = $(window).width() <= 768;
   //   function checkSize() {
@@ -327,7 +435,13 @@ $(document).ready(function () {
     }
 
     ;
-  };
+  }; // date-banner animation
+
+
+  var ticker = $(".date-banner");
+  var list = $(".date-list");
+  var clone = list.clone(true);
+  ticker.append(clone);
 });
 
 /***/ }),

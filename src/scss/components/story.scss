@@ -16,6 +16,8 @@
 }
 
 .story-copy {
+    position: relative;
+    z-index: 5;
     @extend .phone-col-8;
     @extend .desktop-col-20;
 
