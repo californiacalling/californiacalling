@@ -125,14 +125,15 @@ $(document).ready(function () {
   var caPos = $(window).width() >= 992 ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2 : $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
   var callPos = $(window).width() >= 992 ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2 : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2;
   var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 12 : 0;
+  var cHeight = $("#ca").height() / 2;
   var tl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(california.chars, {
-    top: "3.2vw",
+    top: cHeight,
     autoAlpha: 0,
     filter: "blur(5px)"
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(calling.chars, {
-    top: "-3.05vw",
+    top: -cHeight,
     autoAlpha: 0,
     filter: "blur(5px)"
   });

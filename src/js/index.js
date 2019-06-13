@@ -22,10 +22,12 @@ $(document).ready(function(){
       : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
   var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 12 : 0;
 
+  var cHeight = $("#ca").height() / 2;
+
   var tl = new TimelineLite;
 
-  TweenLite.set(california.chars, {top: "3.2vw",autoAlpha: 0,filter: "blur(5px)"});
-  TweenLite.set(calling.chars, {top: "-3.05vw",autoAlpha: 0,filter: "blur(5px)"});
+  TweenLite.set(california.chars, {top: cHeight,autoAlpha: 0,filter: "blur(5px)"});
+  TweenLite.set(calling.chars, {top: -cHeight,autoAlpha: 0,filter: "blur(5px)"});
   TweenLite.set(california.words, {  marginLeft: caPos});
   TweenLite.set(calling.words, {marginLeft: callPos});
   TweenLite.set(ele.words, {autoAlpha: 0,marginTop: '-1%'});
