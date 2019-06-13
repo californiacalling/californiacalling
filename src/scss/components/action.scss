@@ -137,10 +137,6 @@
     p {
         @extend .desktop-col-8;
         margin-bottom: 10.4%;
-
-        @include desktop {
-            margin-bottom: 0;
-        }
     }
 }
 
@@ -154,6 +150,10 @@
     @include desktop {
         h1 {
             margin-top: -1.5vw;
+        }
+
+        p {
+            margin-bottom: 0;
         }
     }
 }

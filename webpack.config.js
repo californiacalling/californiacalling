@@ -13,12 +13,12 @@ module.exports = [
     },
 
     // target: "node",
-    externals: ['express'],
+    externals: ["express"],
     module: {
       rules: [
         {
           test: /\.(njk|nunjucks)$/,
-          loader: 'nunjucks-loader'
+          loader: "nunjucks-loader"
         }
       ]
     },
@@ -26,8 +26,8 @@ module.exports = [
       new NunjucksWebpackPlugin({
         templates: [
           {
-            from: './src/views/index.njk',
-            to: './index.html'
+            from: "./src/views/index.njk",
+            to: "./index.html"
           }
         ]
       })
@@ -94,7 +94,13 @@ module.exports = [
           flatten: true
         }
       ]),
-      // new LiveReloadPlugin()
+      new CopyWebpackPlugin([
+        {
+          from: "./favicon.png",
+          to: "./",
+          flatten: true
+        }
+      ])
     ]
   }
 ];

@@ -5,8 +5,6 @@ import { SplitText } from "./vendors/SplitText";
 
 $(document).ready(function(){
   var controller = new ScrollMagic.Controller();
-  console.log(controller);
-  
 
   // word animations
   var california = new SplitText("#ca", {type: "words,chars", position: "absolute"});
@@ -22,25 +20,26 @@ $(document).ready(function(){
     $(window).width() >= 992
       ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2
       : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
-  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 6 : 0;
+  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 12 : 0;
 
   var tl = new TimelineLite;
 
   TweenLite.set(california.chars, {top: "3.2vw",autoAlpha: 0,filter: "blur(5px)"});
-  TweenLite.set(calling.chars, {top: "-3.15vw",autoAlpha: 0,filter: "blur(5px)"});
+  TweenLite.set(calling.chars, {top: "-3.05vw",autoAlpha: 0,filter: "blur(5px)"});
   TweenLite.set(california.words, {  marginLeft: caPos});
   TweenLite.set(calling.words, {marginLeft: callPos});
-  TweenLite.set(california.chars[0], {autoAlpha: 1,filter: "blur(0px)"});
-  TweenLite.set(calling.chars[0], {autoAlpha: 1,filter: "blur(0px)"});
   TweenLite.set(ele.words, {autoAlpha: 0,marginTop: '-1%'});
   TweenLite.set(sfdw.words, {autoAlpha: 0,marginTop:'1%'});;
 
-  tl.staggerTo([california.chars, calling.chars], 1, {top: 0})
-    .staggerTo([california.words, calling.words], 0.25, {marginLeft: cWidth, ease: Power1.easeInOut})
-    .staggerTo(california.chars, 0.25, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 1)
-    .staggerTo(calling.chars, 0.25, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 1)
-    .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 3)
-    .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 3, done);
+
+
+  tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
+    .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
+    .staggerTo([california.words, calling.words], 0.5, {marginLeft: cWidth, ease: Power1.easeInOut}, 0, 4)
+    .staggerTo(california.chars, 0.5, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+    .staggerTo(calling.chars, 0.5, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+    .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6)
+    .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6, done);
 
   function done() {
     california.revert();
@@ -71,7 +70,7 @@ $(document).ready(function(){
   var scene = new ScrollMagic.Scene({triggerElement: "#story-wrap"}).setTween(newtl).addTo(controller);
 
   var mapTween = new TimelineLite().add([
-    TweenMax.fromTo("#map", 1, {marginTop: '15vw'}, {marginTop: '-20vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#map", 1, {marginTop: '15vw'}, {marginTop: '-10vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#legend", 1, {marginTop: '20vw'}, {marginTop: '-15vw', ease: Linear.easeNone})
   ]);
 
@@ -82,14 +81,14 @@ $(document).ready(function(){
   var actionTween = new TimelineLite().add([
     TweenMax.fromTo("#action1", 1, {marginTop: '-5vw'}, {marginTop: '-15vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#action2", 1, {marginTop: '15vw'}, {marginTop: '-20vw', ease: Linear.easeNone}),
-    TweenMax.fromTo("#action3", 1, {marginTop: '-6.5vw'}, {marginTop: '-20vw', ease: Linear.easeNone}),
-    TweenMax.fromTo("#action4", 1, {marginTop: '0vw'}, {marginTop: '-2vw', ease: Linear.easeNone}),
-    TweenMax.fromTo("#action5", 1, {marginTop: '-3vw'}, {marginTop: '-15vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#action3", 1, {marginTop: '-2.5vw'}, {marginTop: '-10vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#action4", 1, {marginTop: '0vw'}, {marginTop: '-5vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#action5", 1, {marginTop: '3vw'}, {marginTop: '-11vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#action6", 1, {marginTop: '-12vw'}, {marginTop: '-19vw', ease: Linear.easeNone}),
-    TweenMax.fromTo("#action7", 1, {marginBottom: '-7vw'}, {marginTop: '-3.5vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#action7", 1, {marginBottom: '-3.5vw'}, {marginTop: '-9vw', ease: Linear.easeNone}),
   ]);
 
-  var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 1500})
+  var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 2000})
   .setTween(actionTween)
   .addTo(controller);
 
@@ -130,7 +129,8 @@ $(document).ready(function(){
   var foottl = new TimelineLite;
 
   foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
-        .staggerTo(foot.lines, 2, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
+        .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
+        .to('button', 0.25, {autoAlpha: 1})
 
   function footDone() {
     foot.revert();
