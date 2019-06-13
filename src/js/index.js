@@ -35,9 +35,9 @@ $(document).ready(function(){
 
   tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
     .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
-    .staggerTo([california.words, calling.words], 0.5, {marginLeft: cWidth, ease: Power1.easeInOut}, 0, 4)
-    .staggerTo(california.chars, 0.5, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
-    .staggerTo(calling.chars, 0.5, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+    .staggerTo([california.words, calling.words], 1, {marginLeft: cWidth, ease: Power1.easeInOut}, 0, 4)
+    .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+    .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6)
     .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6, done);
 
@@ -138,7 +138,7 @@ if ($(window).width() >= 769) {
     foot.revert();
   }
 
-  var footScene = new ScrollMagic.Scene({triggerElement: "#footer"})
+  var footScene = new ScrollMagic.Scene({triggerElement: "#footer", reverse: false})
   .setTween(foottl)
   .addTo(controller);
 

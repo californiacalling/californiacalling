@@ -23,6 +23,7 @@
         border: none;
         margin-bottom: 2.500vw;
         width: 3.813vw;
+        cursor: pointer;
 
         &:hover {
             background-color: transparent;
@@ -45,6 +46,7 @@
 .rosebear {
 
     .slick-next, .slick-prev {
+
         #CC-v6-Desktop {
             fill: $black;
         }
