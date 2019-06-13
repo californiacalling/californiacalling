@@ -60,7 +60,7 @@ $(document).ready(function(){
 
   TweenLite.set(storyCopy.lines, {autoAlpha: 0, marginTop: '1%'});
 
-  newtl.staggerTo(storyCopy.lines,3,{ marginTop: 0, autoAlpha: 1},0.3,endStory);
+  newtl.staggerTo(storyCopy.lines,3,{ marginTop: 0, autoAlpha: 1},0.3, endStory);
 
     function endStory() {
       storyCopy.revert();
@@ -78,6 +78,7 @@ $(document).ready(function(){
   .setTween(mapTween)
   .addTo(controller);
 
+if ($(window).width() >= 769) {
   var actionTween = new TimelineLite().add([
     TweenMax.fromTo("#action1", 1, {marginTop: '-5vw'}, {marginTop: '-15vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#action2", 1, {marginTop: '15vw'}, {marginTop: '-20vw', ease: Linear.easeNone}),
@@ -91,6 +92,7 @@ $(document).ready(function(){
   var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 2000})
   .setTween(actionTween)
   .addTo(controller);
+}
 
 // bear carousels
   $(".bears-carousel").slick({

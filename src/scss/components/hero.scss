@@ -19,6 +19,15 @@ header {
     @extend .center-all;
     @extend .column;
     text-align: center;
+    margin-top: -50vw;
+
+    @include tablet {
+        margin-top: 0;
+    }
+
+    @include desktop {
+        margin-top: 0;
+    }
 }
 
 .cc {

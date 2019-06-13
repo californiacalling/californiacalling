@@ -226,46 +226,50 @@ $(document).ready(function () {
     triggerElement: "#story",
     duration: 1500
   }).setTween(mapTween).addTo(controller);
-  var actionTween = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]().add([gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action1", 1, {
-    marginTop: '-5vw'
-  }, {
-    marginTop: '-15vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action2", 1, {
-    marginTop: '15vw'
-  }, {
-    marginTop: '-20vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action3", 1, {
-    marginTop: '-2.5vw'
-  }, {
-    marginTop: '-10vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action4", 1, {
-    marginTop: '0vw'
-  }, {
-    marginTop: '-5vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action5", 1, {
-    marginTop: '3vw'
-  }, {
-    marginTop: '-11vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action6", 1, {
-    marginTop: '-12vw'
-  }, {
-    marginTop: '-19vw',
-    ease: Linear.easeNone
-  }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action7", 1, {
-    marginBottom: '-3.5vw'
-  }, {
-    marginTop: '-9vw',
-    ease: Linear.easeNone
-  })]);
-  var actionScene = new ScrollMagic.Scene({
-    triggerElement: "#damage-num",
-    duration: 2000
-  }).setTween(actionTween).addTo(controller); // bear carousels
+
+  if ($(window).width() >= 769) {
+    var actionTween = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]().add([gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action1", 1, {
+      marginTop: '-5vw'
+    }, {
+      marginTop: '-15vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action2", 1, {
+      marginTop: '15vw'
+    }, {
+      marginTop: '-20vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action3", 1, {
+      marginTop: '-2.5vw'
+    }, {
+      marginTop: '-10vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action4", 1, {
+      marginTop: '0vw'
+    }, {
+      marginTop: '-5vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action5", 1, {
+      marginTop: '3vw'
+    }, {
+      marginTop: '-11vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action6", 1, {
+      marginTop: '-12vw'
+    }, {
+      marginTop: '-19vw',
+      ease: Linear.easeNone
+    }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action7", 1, {
+      marginBottom: '-3.5vw'
+    }, {
+      marginTop: '-9vw',
+      ease: Linear.easeNone
+    })]);
+    var actionScene = new ScrollMagic.Scene({
+      triggerElement: "#damage-num",
+      duration: 2000
+    }).setTween(actionTween).addTo(controller);
+  } // bear carousels
+
 
   $(".bears-carousel").slick({
     arrows: true,

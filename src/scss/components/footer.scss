@@ -115,6 +115,46 @@ footer {
             margin: 0 2.625vw 0 0;
         }
     }
+
+    img:first-of-type {
+        width: 21.067vw;
+        margin-top: 25vw;
+
+        @include tablet {
+            margin-top: $space-lg;
+            width: 10.286vw;
+        }
+
+        @include desktop {
+            margin-top: 0;
+            width: 4.938vw;
+        }
+    }
+
+    img:nth-of-type(2) {
+        width: 27.467vw;
+
+        @include tablet {
+            width: 13.411vw;
+        }
+
+        @include desktop {
+            width: 6.438vw;
+        }
+    }
+
+    img:last-of-type {
+        width: 35.733vw;
+
+        @include tablet {
+            width: 17.448vw;
+        }
+
+        @include desktop {
+            width: 8.375vw;
+        }
+    }
+
 }
 
 .legal {
