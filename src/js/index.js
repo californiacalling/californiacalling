@@ -20,7 +20,7 @@ $(document).ready(function(){
     $(window).width() >= 992
       ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2
       : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
-  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 12 : 0;
+  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 6 : 0;
 
   var cHeight = $("#ca").height() / 2;
 
@@ -31,7 +31,9 @@ $(document).ready(function(){
   TweenLite.set(california.words, {  marginLeft: caPos});
   TweenLite.set(calling.words, {marginLeft: callPos});
   TweenLite.set(ele.words, {autoAlpha: 0,marginTop: '-1%'});
-  TweenLite.set(sfdw.words, {autoAlpha: 0,marginTop:'1%'});;
+  TweenLite.set(sfdw.words, {autoAlpha: 0,marginTop:'1%'});
+  TweenLite.set($('.line'), {autoAlpha: 0, marginTop: '-50vh'});
+  TweenLite.set($('.hero-footer'), {autoAlpha: 0, marginTop: '1%'});
 
 
 
@@ -40,8 +42,10 @@ $(document).ready(function(){
     .staggerTo([california.words, calling.words], 1, {marginLeft: cWidth, ease: Power1.easeInOut}, 0, 4)
     .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
-    .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6)
-    .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6, done);
+    .to($('.line'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '2s'})
+    .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '4s'})
+    .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 7)
+    .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 7, done);
 
   function done() {
     california.revert();
