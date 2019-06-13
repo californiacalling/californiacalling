@@ -124,7 +124,7 @@ $(document).ready(function () {
   });
   var caPos = $(window).width() >= 992 ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2 : $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
   var callPos = $(window).width() >= 992 ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2 : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2;
-  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 6 : 0;
+  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 10 : 0;
   var cHeight = $("#ca").height() / 2;
   var tl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(california.chars, {
@@ -176,25 +176,24 @@ $(document).ready(function () {
     autoAlpha: 1,
     filter: "blur(0px)",
     ease: Power1.easeInOut
-  }, 0.05, 4).to($('.line'), 1, {
+  }, 0.05, 4).to($('.line'), 0.5, {
     autoAlpha: 1,
     marginTop: 0,
-    ease: Power1.easeInOut,
-    delay: '2s'
-  }).to($('.hero-footer'), 1, {
-    autoAlpha: 1,
-    marginTop: 0,
-    ease: Power1.easeInOut,
-    delay: '4s'
+    ease: Power1.easeInOut
   }).staggerTo(ele.words, 1, {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut
-  }, 0, 7).staggerTo(sfdw.words, 1, {
+  }, 0, 6).staggerTo(sfdw.words, 1, {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut
-  }, 0, 7, done);
+  }, 0, 6, done).to($('.hero-footer'), 1, {
+    autoAlpha: 1,
+    marginTop: 0,
+    ease: Power1.easeInOut,
+    delay: '9s'
+  });
 
   function done() {
     california.revert();
@@ -202,7 +201,13 @@ $(document).ready(function () {
     ele.revert();
     sfdw.revert();
     $('#ca').removeAttr("style");
+    $('#ca').css({
+      transition: '1s'
+    });
     $("#call").removeAttr("style");
+    $('#call').css({
+      transition: '1s'
+    });
     $("#ele").removeAttr("style");
     $("#sfdw").removeAttr("style");
   }
