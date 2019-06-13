@@ -11,6 +11,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    opacity: 0;
 
     svg {
         width: 1px;
@@ -61,4 +62,19 @@ body {
     @include desktop {
         display: none;
     }
+}
+
+.fade-in {
+    animation: fade-in 1s linear forwards;
+    animation-delay: 4s;
+}
+
+.fade-in-down {
+    animation: fade-in-down 1s cubic-bezier(.59,0,.45,.99) forwards;
+    animation-delay: 5s;
+}
+
+.fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(.59,0,.45,.99) forwards;
+    animation-delay: 5s;
 }

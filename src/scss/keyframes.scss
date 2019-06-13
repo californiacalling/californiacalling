@@ -1,0 +1,111 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        position: absolute;
+    }
+    25% {
+        opacity: 1;
+        margin-top: 0;
+    }
+    35% {
+        width: 5.3vw;
+        margin-top: -3.1vw;
+    }
+
+    89% {
+        width: 100vw;
+        margin-top: -3.1vw;
+    }
+    100% {
+        margin-top: -3.1vw;
+        width: 100vw;
+        position: absolute;
+    }
+}
+
+@keyframes fadeInExpand {
+    0% {
+        opacity: 0;
+        position: absolute;
+    }
+    25% {
+        opacity: 1;
+        margin-top: 0;
+    }
+    35% {
+        width: 5.3vw;
+        margin-top: 3.1vw;
+    }
+    100% {
+        width: 100vw;
+        margin-top: 3.1vw;
+        position: absolute;
+    }
+}
+
+@keyframes overlayMove {
+    0% {
+        opacity: 1;
+        left: 42vw;
+    }
+    43% {
+        left: 42vw;
+    }
+    60% {
+        opacity: 1;
+        left: 40vw;
+    }
+    95% {
+        left: 85vw;
+        opacity: 1;
+    }
+    100% {
+        left: 85vw;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        margin-top: -1%;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        margin-top: 1%;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
