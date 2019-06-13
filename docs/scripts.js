@@ -201,13 +201,7 @@ $(document).ready(function () {
     ele.revert();
     sfdw.revert();
     $('#ca').removeAttr("style");
-    $('#ca').css({
-      transition: '1s'
-    });
     $("#call").removeAttr("style");
-    $('#call').css({
-      transition: '1s'
-    });
     $("#ele").removeAttr("style");
     $("#sfdw").removeAttr("style");
   }
