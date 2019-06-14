@@ -1208,6 +1208,12 @@ footer {
     color: #000; }
     .cta:hover .bear svg #CC-v4 {
       fill: #000; }
+  .cta:focus {
+    background-color: #000;
+    border-top: 1px solid #AAA;
+    color: #FFF; }
+    .cta:focus .bear svg #CC-v4 {
+      fill: #FFF; }
 
 .social {
   display: flex;

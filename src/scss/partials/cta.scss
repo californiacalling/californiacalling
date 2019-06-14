@@ -64,4 +64,18 @@
             }
         }
     }
+
+    &:focus {
+        background-color: $black;
+        border-top: 1px solid $light-gray;
+        color: $white;
+
+        .bear {
+            svg {
+                #CC-v4 {
+                    fill: $white;
+                }
+            }
+        }
+    }
 }
