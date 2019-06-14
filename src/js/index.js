@@ -144,7 +144,7 @@ if ($(window).width() >= 769) {
 
   foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
         .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
-        .to('button', 0.25, {autoAlpha: 1})
+        .to('#foot-button', 0.25, {autoAlpha: 1})
 
   function footDone() {
     foot.revert();

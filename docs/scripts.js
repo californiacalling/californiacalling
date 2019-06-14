@@ -329,7 +329,7 @@ $(document).ready(function () {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut
-  }, 0.5, 0, footDone).to('button', 0.25, {
+  }, 0.5, 0, footDone).to('#foot-button', 0.25, {
     autoAlpha: 1
   });
 
