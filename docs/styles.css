@@ -1281,3 +1281,6 @@ footer {
 
 .rosebear .slick-prev {
   margin-left: 0; }
+
+.slick-list.dragging {
+  cursor: pointer; }
