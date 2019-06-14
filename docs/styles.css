@@ -618,7 +618,10 @@ header {
   font-family: 'Larish Neue Semibold';
   text-align: center;
   color: #FFF;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-font-kerning: none;
+          font-kerning: none;
+  letter-spacing: 0; }
   .cc.cc-outline, .year {
     -webkit-text-stroke: 1px #FFF;
     color: rgba(255, 255, 255, 0); }

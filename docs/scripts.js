@@ -122,9 +122,14 @@ $(document).ready(function () {
   var sfdw = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#sfdw", {
     type: "words"
   });
+  var caLength = california.chars.length - 1;
+  var callLength = calling.chars.length + 1;
   var caPos = $(window).width() >= 992 ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2 : $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
   var callPos = $(window).width() >= 992 ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2 : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2;
-  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 10 : 0;
+  var caWidth = california.chars[0].offsetWidth + caLength;
+  var callWidth = calling.chars[0].offsetWidth + callLength;
+  var caliWidth = $(window).width() >= 992 ? caWidth : 0;
+  var callingWidth = $(window).width() >= 992 ? callWidth : 0;
   var cHeight = $("#ca").height() / 2;
   var tl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(california.chars, {
@@ -145,11 +150,11 @@ $(document).ready(function () {
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(ele.words, {
     autoAlpha: 0,
-    marginTop: '-1%'
+    paddingBottom: '1%'
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(sfdw.words, {
     autoAlpha: 0,
-    marginTop: '1%'
+    paddingTop: '1%'
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set($('.line'), {
     autoAlpha: 0,
@@ -165,10 +170,13 @@ $(document).ready(function () {
     delay: 2
   }, 0, 0).staggerTo([california.chars, calling.chars], 1, {
     top: 0
-  }, 0, 3).staggerTo([california.words, calling.words], 1, {
-    marginLeft: cWidth,
+  }, 0, 3).staggerTo(california.words, 1, {
+    marginLeft: caliWidth,
     ease: Power1.easeInOut
-  }, 0, 4).staggerTo(california.chars, 1, {
+  }, 0, 4, caliDone).staggerTo(calling.words, 1, {
+    marginLeft: callingWidth,
+    ease: Power1.easeInOut
+  }, 0, 4, callDone).staggerTo(california.chars, 1, {
     autoAlpha: 1,
     filter: "blur(0px)",
     ease: Power1.easeInOut
@@ -182,27 +190,36 @@ $(document).ready(function () {
     ease: Power1.easeInOut
   }).staggerTo(ele.words, 1, {
     autoAlpha: 1,
-    marginTop: 0,
+    paddingBottom: 0,
     ease: Power1.easeInOut
-  }, 0, 6).staggerTo(sfdw.words, 1, {
+  }, 0, 6, eleDone).staggerTo(sfdw.words, 1, {
     autoAlpha: 1,
-    marginTop: 0,
+    paddingTop: 0,
     ease: Power1.easeInOut
-  }, 0, 6, done).to($('.hero-footer'), 1, {
+  }, 0, 6, sfdwDone).to($('.hero-footer'), 1, {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut,
     delay: '9s'
   });
 
-  function done() {
+  function caliDone() {
     california.revert();
+    $("#ca").removeAttr("style");
+  }
+
+  function callDone() {
     calling.revert();
-    ele.revert();
-    sfdw.revert();
-    $('#ca').removeAttr("style");
     $("#call").removeAttr("style");
+  }
+
+  function eleDone() {
+    ele.revert();
     $("#ele").removeAttr("style");
+  }
+
+  function sfdwDone() {
+    sfdw.revert();
     $("#sfdw").removeAttr("style");
   }
 
@@ -405,27 +422,7 @@ $(document).ready(function () {
 
       return n.toString();
     }
-  }; //   const desktop = $(window).width() >= 992;
-  //   const tablet = $(window).width() >= 769 && $(window).width() <= 991;
-  //   const phone = $(window).width() <= 768;
-  //   function checkSize() {
-  //     if ($(window).height() <= 600 && desktop){
-  //       $('.hero-footer').hide();
-  //     }
-  //     if ($(window).height() <= 750 && tablet){
-  //       $(".hero-footer").hide();
-  //     } 
-  //     if ($(window).height() <= 675 && phone){
-  //       $(".hero-footer").hide();
-  //     } else {
-  //       $('.hero-footer').show();
-  //     }
-  //   }
-  // checkSize();
-  // $(window).on('resize', function () {
-  //   checkSize();
-  // })
-  // scroll behavior
+  }; // scroll behavior
 
   window.onscroll = function () {
     if ($(window).scrollTop() >= $('.story').offset().top - 50 && $(window).scrollTop() <= $('.foot-content').offset().top - 400) {

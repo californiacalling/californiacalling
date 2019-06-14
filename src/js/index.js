@@ -12,6 +12,9 @@ $(document).ready(function(){
   var ele = new SplitText("#ele", {type: "words"});
   var sfdw = new SplitText("#sfdw", {type: "words"});
 
+  var caLength = california.chars.length - 1;
+  var callLength = calling.chars.length + 1;
+
   var caPos =
     $(window).width() >= 992
       ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2
@@ -20,7 +23,13 @@ $(document).ready(function(){
     $(window).width() >= 992
       ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2
       : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
-  var cWidth = $(window).width() >= 992 ? california.chars[0].offsetWidth + 10 : 0;
+
+
+  var caWidth = california.chars[0].offsetWidth + caLength;
+  var callWidth = calling.chars[0].offsetWidth + callLength;
+
+  var caliWidth = $(window).width() >= 992 ? caWidth : 0;
+  var callingWidth = $(window).width() >= 992 ? callWidth : 0;
 
   var cHeight = $("#ca").height() / 2;
 
@@ -30,34 +39,42 @@ $(document).ready(function(){
   TweenLite.set(calling.chars, {top: -cHeight,autoAlpha: 0,filter: "blur(5px)"});
   TweenLite.set(california.words, {  marginLeft: caPos});
   TweenLite.set(calling.words, {marginLeft: callPos});
-  TweenLite.set(ele.words, {autoAlpha: 0,marginTop: '-1%'});
-  TweenLite.set(sfdw.words, {autoAlpha: 0,marginTop:'1%'});
+  TweenLite.set(ele.words, {autoAlpha: 0,paddingBottom:'1%'});
+  TweenLite.set(sfdw.words, {autoAlpha: 0,paddingTop:'1%'});
   TweenLite.set($('.line'), {autoAlpha: 0, marginTop: '-50vh'});
   TweenLite.set($('.hero-footer'), {autoAlpha: 0, marginTop: '1%'});
 
-
-
   tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
     .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
-    .staggerTo([california.words, calling.words], 1, {marginLeft: cWidth, ease: Power1.easeInOut}, 0, 4)
+    .staggerTo(california.words, 1, {marginLeft: caliWidth, ease: Power1.easeInOut}, 0, 4, caliDone)
+    .staggerTo(calling.words, 1, {marginLeft: callingWidth, ease: Power1.easeInOut}, 0, 4, callDone)
     .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
-    .staggerTo(ele.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6)
-    .staggerTo(sfdw.words, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0, 6, done)
+    .staggerTo(ele.words, 1, {autoAlpha: 1, paddingBottom: 0, ease: Power1.easeInOut}, 0, 6, eleDone)
+    .staggerTo(sfdw.words, 1, {autoAlpha: 1, paddingTop: 0, ease: Power1.easeInOut}, 0, 6, sfdwDone)
     .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '9s'});
 
 
-  function done() {
-    california.revert();
-    calling.revert();
-    ele.revert();
-    sfdw.revert();
-    $('#ca').removeAttr("style");
-    $("#call").removeAttr("style");
-    $("#ele").removeAttr("style");
-    $("#sfdw").removeAttr("style");
-  }
+    function caliDone() {
+        california.revert();
+        $("#ca").removeAttr("style");
+    }
+
+    function callDone() {
+        calling.revert();
+        $("#call").removeAttr("style");
+    }
+
+    function eleDone() {
+      ele.revert();
+      $("#ele").removeAttr("style");
+    }
+
+    function sfdwDone() {
+        sfdw.revert();
+        $("#sfdw").removeAttr("style");
+    }
 
   tl.restart();
 
@@ -208,32 +225,6 @@ if ($(window).width() >= 769) {
       return n.toString();
     }
   };
-
-  //   const desktop = $(window).width() >= 992;
-  //   const tablet = $(window).width() >= 769 && $(window).width() <= 991;
-  //   const phone = $(window).width() <= 768;
-
-  //   function checkSize() {
-  //     if ($(window).height() <= 600 && desktop){
-  //       $('.hero-footer').hide();
-  //     }
-  //     if ($(window).height() <= 750 && tablet){
-  //       $(".hero-footer").hide();
-  //     } 
-      
-  //     if ($(window).height() <= 675 && phone){
-  //       $(".hero-footer").hide();
-  //     } else {
-  //       $('.hero-footer').show();
-  //     }
-  //   }
-
-    // checkSize();
-
-    // $(window).on('resize', function () {
-    //   checkSize();
-    // })
-
 
     // scroll behavior
     window.onscroll = function() {
