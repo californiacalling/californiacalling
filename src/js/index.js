@@ -39,8 +39,8 @@ $(document).ready(function(){
   TweenLite.set(calling.chars, {top: -cHeight,autoAlpha: 0,filter: "blur(5px)"});
   TweenLite.set(california.words, {  marginLeft: caPos});
   TweenLite.set(calling.words, {marginLeft: callPos});
-  TweenLite.set(ele.words, {autoAlpha: 0,paddingBottom:'1%'});
-  TweenLite.set(sfdw.words, {autoAlpha: 0,paddingTop:'1%'});
+  TweenLite.set(ele.words, {autoAlpha: 0});
+  TweenLite.set(sfdw.words, {autoAlpha: 0});
   TweenLite.set($('.line'), {autoAlpha: 0, marginTop: '-50vh'});
   TweenLite.set($('.hero-footer'), {autoAlpha: 0, marginTop: '1%'});
 
@@ -51,8 +51,8 @@ $(document).ready(function(){
     .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
-    .staggerTo(ele.words, 1, {autoAlpha: 1, paddingBottom: 0, ease: Power1.easeInOut}, 0, 6, eleDone)
-    .staggerTo(sfdw.words, 1, {autoAlpha: 1, paddingTop: 0, ease: Power1.easeInOut}, 0, 6, sfdwDone)
+    .staggerTo(ele.words, 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6, eleDone)
+    .staggerTo(sfdw.words, 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6.5, sfdwDone)
     .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '9s'});
 
 

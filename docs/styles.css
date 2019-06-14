@@ -1208,12 +1208,25 @@ footer {
     color: #000; }
     .cta:hover .bear svg #CC-v4 {
       fill: #000; }
-  .cta:hover {
-    background-color: #000;
-    border-top: 1px solid #AAA;
-    color: #FFF; }
-    .cta:hover .bear svg #CC-v4 {
-      fill: #FFF; }
+
+.social {
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+  .social a {
+    display: inline-block; }
+  .social a img {
+    display: block;
+    width: 8.773vw;
+    margin: 5.333vw 2.1335vw 0; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .social a img {
+        width: 4.284vw;
+        margin: 0 2.083vw 2.083vw 0; } }
+    @media (min-width: 992px) {
+      .social a img {
+        width: 2.056vw;
+        margin: 0 1vw 1.250vw 0; } }
 
 .bears-carousel {
   margin: 17% 0;

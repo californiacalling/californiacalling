@@ -149,12 +149,10 @@ $(document).ready(function () {
     marginLeft: callPos
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(ele.words, {
-    autoAlpha: 0,
-    paddingBottom: '1%'
+    autoAlpha: 0
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(sfdw.words, {
-    autoAlpha: 0,
-    paddingTop: '1%'
+    autoAlpha: 0
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set($('.line'), {
     autoAlpha: 0,
@@ -190,13 +188,11 @@ $(document).ready(function () {
     ease: Power1.easeInOut
   }).staggerTo(ele.words, 1, {
     autoAlpha: 1,
-    paddingBottom: 0,
     ease: Power1.easeInOut
   }, 0, 6, eleDone).staggerTo(sfdw.words, 1, {
     autoAlpha: 1,
-    paddingTop: 0,
     ease: Power1.easeInOut
-  }, 0, 6, sfdwDone).to($('.hero-footer'), 1, {
+  }, 0, 6.5, sfdwDone).to($('.hero-footer'), 1, {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut,
