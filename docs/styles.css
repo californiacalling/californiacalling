@@ -985,8 +985,6 @@ footer {
     .foot-content h2 {
       margin-top: 1.500vw;
       margin-bottom: 3.500vw; } }
-  .foot-content button {
-    opacity: 0; }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .sponsor-logos {
@@ -1043,6 +1041,9 @@ footer {
 
 .footer-bottom p {
   margin: 0; }
+
+.footer-bottom a {
+  text-decoration: underline; }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-bottom {

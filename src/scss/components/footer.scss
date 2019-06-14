@@ -83,10 +83,6 @@ footer {
             margin-bottom: 3.500vw;
         }
     }
-
-    button {
-        opacity: 0;
-    }
 }
 
 .sponsor-logos {
@@ -164,6 +160,10 @@ footer {
 .footer-bottom {
     p {
         margin: 0;
+    }
+
+    a {
+        text-decoration: underline;
     }
 
     @include tablet {
