@@ -116,12 +116,6 @@ $(document).ready(function () {
     type: "words,chars",
     position: "absolute"
   });
-  var ele = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#ele", {
-    type: "words"
-  });
-  var sfdw = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#sfdw", {
-    type: "words"
-  });
   var caLength = california.chars.length - 1;
   var callLength = calling.chars.length + 1;
   var caPos = $(window).width() >= 992 ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2 : $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
@@ -148,10 +142,10 @@ $(document).ready(function () {
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(calling.words, {
     marginLeft: callPos
   });
-  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(ele.words, {
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set("#ele", {
     autoAlpha: 0
   });
-  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(sfdw.words, {
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set("#sfdw", {
     autoAlpha: 0
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set($('.line'), {
@@ -186,10 +180,10 @@ $(document).ready(function () {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut
-  }).staggerTo(ele.words, 1, {
+  }).staggerTo("#ele", 1, {
     autoAlpha: 1,
     ease: Power1.easeInOut
-  }, 0, 6, eleDone).staggerTo(sfdw.words, 1, {
+  }, 0, 6, eleDone).staggerTo("#sfdw", 1, {
     autoAlpha: 1,
     ease: Power1.easeInOut
   }, 0, 6.5, sfdwDone).to($('.hero-footer'), 1, {

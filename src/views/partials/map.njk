@@ -1,6 +1,5 @@
-    <div id="map" class="map-wrap">
+    <section id="map" class="map-wrap">
         <div class='map'>
-        {# focus on this after other styling is complete #}
             {% include '../../content/images/california.svg' %}
         </div>
         {% for i in range(0, 25) -%}
@@ -13,4 +12,4 @@
                 {% include '../../content/images/dot.svg' %}
             </div>
         {%- endfor %}
-    </div>
+    </section>
