@@ -10,24 +10,8 @@ $(document).ready(function(){
   var california = new SplitText("#ca", {type: "words,chars", position: "absolute"});
   var calling = new SplitText("#call", {type: "words,chars", position: "absolute"});
 
-  var caLength = california.chars.length - 1;
-  var callLength = calling.chars.length + 1;
-
-  var caPos =
-    $(window).width() >= 992
-      ? $("#ca").width() / 2 + california.chars[0].offsetWidth / 2
-      : $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
-  var callPos =
-    $(window).width() >= 992
-      ? $("#call").width() / 2 + calling.chars[0].offsetWidth / 2
-      : $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
-
-
-  var caWidth = california.chars[0].offsetWidth + caLength;
-  var callWidth = calling.chars[0].offsetWidth + callLength;
-
-  var caliWidth = $(window).width() >= 992 ? caWidth : 0;
-  var callingWidth = $(window).width() >= 992 ? callWidth : 0;
+  var caPos = $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
+  var callPos = $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
 
   var cHeight = $("#ca").height() / 2;
 
@@ -44,8 +28,8 @@ $(document).ready(function(){
 
   tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
     .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
-    .staggerTo(california.words, 1, {marginLeft: caliWidth, ease: Power1.easeInOut}, 0, 4, caliDone)
-    .staggerTo(calling.words, 1, {marginLeft: callingWidth, ease: Power1.easeInOut}, 0, 4, callDone)
+    .staggerTo(california.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, caliDone)
+    .staggerTo(calling.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, callDone)
     .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
