@@ -272,7 +272,7 @@ body {
     width: 75% !important; } }
 
 @media (max-width: 991px) {
-  .phone-col-10, .hero, .hero-footer, .foot-content {
+  .phone-col-10, .hero-footer, .foot-content {
     width: 83.33333%; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
