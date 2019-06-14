@@ -36,7 +36,6 @@ header {
     text-transform: uppercase;
     font-kerning: none;
     letter-spacing: 0;
-    // align-self: center;
     &.cc-outline{
         -webkit-text-stroke: 1px $white;
         color: rgba(255, 255, 255, 0);
