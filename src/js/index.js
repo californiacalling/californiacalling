@@ -137,14 +137,15 @@ if ($(window).width() >= 769) {
 
   var foot = new SplitText("#foot-copy", { type: "words,lines" });
 
-  TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '1%'})
-  TweenLite.set('#party', {autoAlpha: 0, marginTop: '1%'})
+  TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '0.5%'})
+  TweenLite.set('#party', {autoAlpha: 0, marginTop: '0.5%'})
+  TweenLite.set('#foot-button', {autoAlpha: 0})
 
   var foottl = new TimelineLite;
 
   foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
         .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
-        .to('#foot-button', 0.25, {autoAlpha: 1})
+        .to('#foot-button', 0.4, {autoAlpha: 1})
 
   function footDone() {
     foot.revert();

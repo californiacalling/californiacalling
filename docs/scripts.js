@@ -314,11 +314,14 @@ $(document).ready(function () {
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(foot.lines, {
     autoAlpha: 0,
-    marginTop: '1%'
+    marginTop: '0.5%'
   });
   gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set('#party', {
     autoAlpha: 0,
-    marginTop: '1%'
+    marginTop: '0.5%'
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set('#foot-button', {
+    autoAlpha: 0
   });
   var foottl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
   foottl.to(party, 1, {
@@ -329,7 +332,7 @@ $(document).ready(function () {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut
-  }, 0.5, 0, footDone).to('#foot-button', 0.25, {
+  }, 0.5, 0, footDone).to('#foot-button', 0.4, {
     autoAlpha: 1
   });
 
