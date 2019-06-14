@@ -521,7 +521,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
 
 h1, h2, h3 {
-  font-family: 'Larish Neue Semibold'; }
+  font-family: 'Larish Neue Semibold';
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
 
 @media (max-width: 991px) {
   h1 {
