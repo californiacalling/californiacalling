@@ -267,9 +267,9 @@ $(document).ready(function () {
       marginTop: '-19vw',
       ease: Linear.easeNone
     }), gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#action7", 1, {
-      marginBottom: '-3.5vw'
+      marginBottom: '-9vw'
     }, {
-      marginTop: '-9vw',
+      marginBottom: '-3.5vw',
       ease: Linear.easeNone
     })]);
     var actionScene = new ScrollMagic.Scene({

@@ -82,7 +82,7 @@ if ($(window).width() >= 769) {
     TweenMax.fromTo("#action4", 1, {marginTop: '0vw'}, {marginTop: '-5vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#action5", 1, {marginTop: '3vw'}, {marginTop: '-11vw', ease: Linear.easeNone}),
     TweenMax.fromTo("#action6", 1, {marginTop: '-12vw'}, {marginTop: '-19vw', ease: Linear.easeNone}),
-    TweenMax.fromTo("#action7", 1, {marginBottom: '-3.5vw'}, {marginTop: '-9vw', ease: Linear.easeNone}),
+    TweenMax.fromTo("#action7", 1, {marginBottom: '-9vw'}, {marginBottom: '-3.5vw', ease: Linear.easeNone}),
   ]);
 
   var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 2000})
