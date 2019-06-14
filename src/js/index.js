@@ -49,8 +49,8 @@ $(document).ready(function(){
     .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
     .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
-    .staggerTo("#ele", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6, eleDone)
-    .staggerTo("#sfdw", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6.5, sfdwDone)
+    .staggerTo("#ele", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6)
+    .staggerTo("#sfdw", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6.5)
     .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '9s'});
 
 
@@ -62,16 +62,6 @@ $(document).ready(function(){
     function callDone() {
         calling.revert();
         $("#call").removeAttr("style");
-    }
-
-    function eleDone() {
-      ele.revert();
-      $("#ele").removeAttr("style");
-    }
-
-    function sfdwDone() {
-        sfdw.revert();
-        $("#sfdw").removeAttr("style");
     }
 
   tl.restart();

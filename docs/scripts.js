@@ -183,10 +183,10 @@ $(document).ready(function () {
   }).staggerTo("#ele", 1, {
     autoAlpha: 1,
     ease: Power1.easeInOut
-  }, 0, 6, eleDone).staggerTo("#sfdw", 1, {
+  }, 0, 6).staggerTo("#sfdw", 1, {
     autoAlpha: 1,
     ease: Power1.easeInOut
-  }, 0, 6.5, sfdwDone).to($('.hero-footer'), 1, {
+  }, 0, 6.5).to($('.hero-footer'), 1, {
     autoAlpha: 1,
     marginTop: 0,
     ease: Power1.easeInOut,
@@ -201,16 +201,6 @@ $(document).ready(function () {
   function callDone() {
     calling.revert();
     $("#call").removeAttr("style");
-  }
-
-  function eleDone() {
-    ele.revert();
-    $("#ele").removeAttr("style");
-  }
-
-  function sfdwDone() {
-    sfdw.revert();
-    $("#sfdw").removeAttr("style");
   }
 
   tl.restart();
