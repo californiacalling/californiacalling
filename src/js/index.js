@@ -213,7 +213,7 @@ if ($(window).width() >= 769) {
       if ($(window).scrollTop() >= ($('.story').offset().top - 50) && ($(window).scrollTop() <= ($('.foot-content').offset().top - 400))){
         $('.cta').css({marginBottom: 0, transition: '0.5s'})
       } else {
-        $(".cta").css({ marginBottom: -($('.cta').height()+1), transition: '0.5s'});
+        $(".cta").css({ marginBottom: -($('.cta').height()+10), transition: '0.5s'});
       }
 
       if ($(window).scrollTop() >= ($('.map-wrap').offset().top - 50)) {

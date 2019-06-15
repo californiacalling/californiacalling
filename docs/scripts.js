@@ -414,7 +414,7 @@ $(document).ready(function () {
       });
     } else {
       $(".cta").css({
-        marginBottom: -($('.cta').height() + 1),
+        marginBottom: -($('.cta').height() + 10),
         transition: '0.5s'
       });
     }
