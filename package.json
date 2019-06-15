@@ -30,6 +30,7 @@
   "dependencies": {
     "aws-sdk": "^2.458.0",
     "countup.js": "^2.0.4",
+    "cssnano": "^4.1.10",
     "express": "^4.16.4",
     "fontfaceobserver": "^2.1.0",
     "gsap": "^2.1.3",
