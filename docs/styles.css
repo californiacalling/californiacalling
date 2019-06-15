@@ -655,9 +655,14 @@ header {
   #ele, #sfdw, .legal {
     line-height: 1.750vw; } }
 
-@media (min-width: 992px) {
-  #ele {
-    margin-bottom: 2.5vw; } }
+#ele {
+  margin-bottom: 7vw; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #ele {
+      margin-bottom: 6vw; } }
+  @media (min-width: 992px) {
+    #ele {
+      margin-bottom: 2.5vw; } }
 
 .story {
   position: relative;
@@ -1216,7 +1221,7 @@ footer {
   bottom: 0;
   z-index: 5;
   height: 17.067vw;
-  margin-bottom: -17.067vw;
+  margin-bottom: -18vw;
   transition: 0.5s; }
   .cta p {
     margin-left: 8px; }
@@ -1225,7 +1230,7 @@ footer {
   @media (min-width: 768px) and (max-width: 991px) {
     .cta {
       height: 8.333vw;
-      margin-bottom: -8.4vw; }
+      margin-bottom: -9vw; }
       .cta p {
         margin-left: 3.125vw; }
       .cta .bear svg {
@@ -1233,7 +1238,7 @@ footer {
   @media (min-width: 992px) {
     .cta {
       height: 4vw;
-      margin-bottom: -4.2vw; }
+      margin-bottom: -5vw; }
       .cta p {
         margin-left: 1.500vw; }
       .cta .bear svg {

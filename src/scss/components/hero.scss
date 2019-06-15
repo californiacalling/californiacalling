@@ -73,6 +73,12 @@ header {
 }
 
 #ele {
+    margin-bottom: 7vw;
+
+    @include tablet {
+        margin-bottom: 6vw;
+    }
+
     @include desktop {
         margin-bottom: 2.5vw;
     }

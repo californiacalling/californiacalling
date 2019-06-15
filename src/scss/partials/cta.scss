@@ -8,7 +8,7 @@
     z-index: 5;
     @extend .center-all;
     height: 17.067vw;
-    margin-bottom: -17.067vw;
+    margin-bottom: -18vw;
     transition: 0.5s;
 
     p {
@@ -23,7 +23,7 @@
 
     @include tablet {
         height: 8.333vw;
-        margin-bottom: -8.4vw;
+        margin-bottom: -9vw;
 
         p {
             margin-left: 3.125vw;
@@ -38,7 +38,7 @@
 
     @include desktop {
         height: 4vw;
-        margin-bottom: -4.2vw;
+        margin-bottom: -5vw;
 
         p {
             margin-left: 1.500vw;
