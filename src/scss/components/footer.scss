@@ -115,7 +115,7 @@ footer {
 
     img:first-of-type {
         width: 21.067vw;
-        margin-top: 25vw;
+        margin-top: $space-lg;
 
         @include tablet {
             margin-top: $space-lg;
@@ -155,7 +155,15 @@ footer {
 }
 
 .legal {
-    margin-top: $space-lg;
+    margin-top: 25vw;
+
+    @include tablet {
+        margin-top: $space-lg;
+    }
+
+    @include desktop {
+        margin-top: $space-lg;
+    }
 }
 
 .footer-bottom {
@@ -166,7 +174,7 @@ footer {
     a {
         text-decoration: underline;
     }
-    
+
     display: flex;
     flex-direction: column-reverse;
 
@@ -174,8 +182,6 @@ footer {
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-between;
-
-
     }
 
     @include desktop {

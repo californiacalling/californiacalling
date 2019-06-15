@@ -9,11 +9,6 @@
         @extend .phone-col-8;
         @extend .offset-phone-col-2;
 
-        // @include tablet {
-        //     width: auto;
-        //     height: auto;
-        // }
-
         @include desktop {
             width: auto;
             height: auto;
@@ -34,9 +29,7 @@
         }
     }
 
-    img:nth-of-type(2), img:nth-of-type(6) {
-        // @extend .phone-col-6;
-        // @extend .offset-phone-col-1;
+    img:nth-of-type(2) {
         margin-bottom: 10.4%;
     }
 
@@ -107,6 +100,7 @@
         @extend .offset-tablet-col-1;
         @extend .tablet-col-7;
         @extend .desktop-col-5;
+        // margin-top: -4.25vw !important;
 
         @include desktop {
             margin-top: -12vw;
@@ -119,10 +113,12 @@
         @extend .tablet-col-9;
         @extend .offset-desktop-col-11;
         @extend .desktop-col-8;
+        margin-top: 10vw;
         margin-bottom: -7%;
         order: 1;
 
         @include desktop {
+            margin-top: 0;
             margin-bottom: -3.5vw;
         }
     }
@@ -139,12 +135,17 @@
         @extend .tablet-col-5;
         @extend .desktop-col-10;
         letter-spacing: -0.400vw;
+        font-size: 12.250vw;
+        line-height: 12.250vw;
 
         @include tablet {
+            font-size: 13.021vw;
             letter-spacing: -0.195vw;
         }
 
         @include desktop {
+            font-size: 7.5vw;
+            line-height: 6.250vw;
             letter-spacing: -0.094vw;
         }
     }
@@ -156,6 +157,7 @@
 }
 
 .action-copy-2 {
+    margin-bottom: 3vw;
     @include tablet {
         order: 1;
     }

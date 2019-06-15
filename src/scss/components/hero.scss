@@ -71,3 +71,9 @@ header {
         line-height: 1.750vw;
     }
 }
+
+#ele {
+    @include desktop {
+        margin-bottom: 2.5vw;
+    }
+}

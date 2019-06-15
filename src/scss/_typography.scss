@@ -10,7 +10,6 @@ h1, h2, h3 {
 h1 {
     @include phone {
         font-size: 12.800vw;
-        // letter-spacing: -0.267vw;
         line-height: 12.800vw;
     }
 
@@ -20,7 +19,6 @@ h1 {
 
     @include desktop {
         font-size: 7.5vw;
-        // letter-spacing: 0.063vw;
         line-height: 6.250vw;
     }
 }

@@ -23,9 +23,9 @@
 
     @include phone {
         h1 {
-            font-size: 8.533vw;
-            letter-spacing: -0.267vw;
-            line-height: 9.600vw;
+            font-size: 7.467vw;
+            letter-spacing: -0.133vw;
+            line-height: 8.533vw;
         }
     }
 
@@ -54,7 +54,7 @@
     margin-bottom: 25vw;
 
     p {
-        margin: 8px;
+        margin: 8px 0;
     }
 
     @include tablet {
@@ -108,7 +108,7 @@
 
     @include tablet {
         svg {
-            width: 2.5vw;
+            width: 2.35vw;
         }
         &:first-of-type {
             margin-bottom: 45vw; 

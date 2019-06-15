@@ -112,7 +112,7 @@ if ($(window).width() >= 769) {
     TweenMax.fromTo("#action7", 1, {marginBottom: '-9vw'}, {marginBottom: '-3.5vw', ease: Linear.easeNone}),
   ]);
 
-  var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 2000})
+  var actionScene = new ScrollMagic.Scene({triggerElement: "#damage-num", duration: 2500})
   .setTween(actionTween)
   .addTo(controller);
 }

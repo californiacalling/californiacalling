@@ -314,7 +314,7 @@ $(document).ready(function () {
     })]);
     var actionScene = new ScrollMagic.Scene({
       triggerElement: "#damage-num",
-      duration: 2000
+      duration: 2500
     }).setTween(actionTween).addTo(controller);
   } // bear carousels
 

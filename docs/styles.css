@@ -655,6 +655,10 @@ header {
   #ele, #sfdw, .legal {
     line-height: 1.750vw; } }
 
+@media (min-width: 992px) {
+  #ele {
+    margin-bottom: 2.5vw; } }
+
 .story {
   position: relative;
   display: flex;
@@ -671,9 +675,9 @@ header {
   z-index: 5; }
   @media (max-width: 991px) {
     .story-copy h1 {
-      font-size: 8.533vw;
-      letter-spacing: -0.267vw;
-      line-height: 9.600vw; } }
+      font-size: 7.467vw;
+      letter-spacing: -0.133vw;
+      line-height: 8.533vw; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .story-copy h1 {
       font-size: 6.771vw;
@@ -690,7 +694,7 @@ header {
   margin-top: -75vw;
   margin-bottom: 25vw; }
   .legend p {
-    margin: 8px; }
+    margin: 8px 0; }
   @media (min-width: 768px) and (max-width: 991px) {
     .legend {
       margin-top: -65vw; } }
@@ -722,7 +726,7 @@ header {
     margin-bottom: 6.4%; }
   @media (min-width: 768px) and (max-width: 991px) {
     .legend-cell svg {
-      width: 2.5vw; }
+      width: 2.35vw; }
     .legend-cell:first-of-type {
       margin-bottom: 45vw; }
     .legend-cell:last-of-type {
@@ -758,7 +762,7 @@ header {
       .action img:first-child {
         margin-top: -5vw;
         margin-bottom: 0; } }
-  .action img:nth-of-type(2), .action img:nth-of-type(6) {
+  .action img:nth-of-type(2) {
     margin-bottom: 10.4%; }
   @media (min-width: 768px) and (max-width: 991px) {
     .action img:nth-of-type(2) {
@@ -792,27 +796,36 @@ header {
       margin-top: -12vw;
       margin-bottom: 7vw; } }
   .action img:last-child {
+    margin-top: 10vw;
     margin-bottom: -7%;
     order: 1; }
     @media (min-width: 992px) {
       .action img:last-child {
+        margin-top: 0;
         margin-bottom: -3.5vw; } }
 
 .action-copy-1 h1, .action-copy-2 h1 {
-  letter-spacing: -0.400vw; }
+  letter-spacing: -0.400vw;
+  font-size: 12.250vw;
+  line-height: 12.250vw; }
   @media (min-width: 768px) and (max-width: 991px) {
     .action-copy-1 h1, .action-copy-2 h1 {
+      font-size: 13.021vw;
       letter-spacing: -0.195vw; } }
   @media (min-width: 992px) {
     .action-copy-1 h1, .action-copy-2 h1 {
+      font-size: 7.5vw;
+      line-height: 6.250vw;
       letter-spacing: -0.094vw; } }
 
 .action-copy-1 p, .action-copy-2 p {
   margin-bottom: 10.4%; }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .action-copy-2 {
-    order: 1; } }
+.action-copy-2 {
+  margin-bottom: 3vw; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .action-copy-2 {
+      order: 1; } }
 
 @media (min-width: 992px) {
   .action-copy-1 h1 {
@@ -1024,7 +1037,7 @@ footer {
 
 .sponsor-logos img:first-of-type {
   width: 21.067vw;
-  margin-top: 25vw; }
+  margin-top: 56px; }
   @media (min-width: 768px) and (max-width: 991px) {
     .sponsor-logos img:first-of-type {
       margin-top: 56px;
@@ -1053,7 +1066,13 @@ footer {
       width: 8.375vw; } }
 
 .legal {
-  margin-top: 56px; }
+  margin-top: 25vw; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .legal {
+      margin-top: 56px; } }
+  @media (min-width: 992px) {
+    .legal {
+      margin-top: 56px; } }
 
 .footer-bottom {
   display: flex;
