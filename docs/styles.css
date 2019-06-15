@@ -48,7 +48,8 @@ body {
   padding: 0;
   font-family: 'WorkSans';
   width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-font-smoothing: subpixel-antialiased; }
 
 .line {
   position: absolute;
