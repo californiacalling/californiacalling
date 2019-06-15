@@ -2,7 +2,7 @@
     @extend .black;
     overflow: hidden;
     padding-top: 25%;
-    margin-bottom: 25.1%;
+    margin-bottom: 25%;
 
     .bear-content {
         color: $white;
@@ -37,7 +37,7 @@
 
     @include desktop {
         height: 31.250vw;
-        margin-bottom: -1px;
+        margin-bottom: -5px;
     }
 
 }

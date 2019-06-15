@@ -36,6 +36,13 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Larish Neue Semibold';
+  src: url("./fonts/larish_neue_semibold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
 body {
   margin: 0;
   padding: 0;
@@ -521,15 +528,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
 
 h1, h2, h3 {
-  font-family: 'Larish Neue Semibold';
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal; }
+  font-family: 'Larish Neue Semibold'; }
 
 @media (max-width: 991px) {
   h1 {
     font-size: 12.800vw;
-    letter-spacing: -0.267vw;
     line-height: 12.800vw; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -539,7 +542,6 @@ h1, h2, h3 {
 @media (min-width: 992px) {
   h1 {
     font-size: 7.5vw;
-    letter-spacing: 0.063vw;
     line-height: 6.250vw; } }
 
 @media (max-width: 991px) {
@@ -623,8 +625,7 @@ header {
   color: #FFF;
   text-transform: uppercase;
   -webkit-font-kerning: none;
-          font-kerning: none;
-  letter-spacing: 0; }
+          font-kerning: none; }
   .cc.cc-outline, .year {
     -webkit-text-stroke: 1px #FFF;
     color: rgba(255, 255, 255, 0); }
@@ -811,7 +812,7 @@ header {
 .goldenbear {
   overflow: hidden;
   padding-top: 25%;
-  margin-bottom: 25.1%; }
+  margin-bottom: 25%; }
   .goldenbear .bear-content {
     color: #FFF;
     overflow-y: visible;
@@ -838,7 +839,7 @@ header {
   @media (min-width: 992px) {
     .spin-wrap {
       height: 31.250vw;
-      margin-bottom: -1px; } }
+      margin-bottom: -5px; } }
 
 .cc-spin {
   position: absolute;
@@ -948,6 +949,7 @@ footer {
 
 .date-list {
   padding-right: 1.5vw;
+  padding-top: .75vw;
   -webkit-animation: ticker 15s infinite linear;
           animation: ticker 15s infinite linear; }
 

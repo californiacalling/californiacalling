@@ -31,6 +31,7 @@
     "aws-sdk": "^2.458.0",
     "countup.js": "^2.0.4",
     "express": "^4.16.4",
+    "fontfaceobserver": "^2.1.0",
     "gsap": "^2.1.3",
     "nunjucks": "^3.2.0",
     "nunjucks-loader": "^3.0.0",

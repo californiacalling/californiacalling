@@ -35,7 +35,8 @@ header {
     color: $white;
     text-transform: uppercase;
     font-kerning: none;
-    letter-spacing: 0;
+    // letter-spacing: -0.188vw;
+
     &.cc-outline{
         -webkit-text-stroke: 1px $white;
         color: rgba(255, 255, 255, 0);

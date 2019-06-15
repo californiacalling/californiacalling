@@ -1,54 +1,79 @@
 import { CountUp } from "countup.js";
 import { TweenLite, TweenMax, TimelineMax, TimelineLite } from "gsap";
 import { SplitText } from "./vendors/SplitText";
-// import { ScrollMagic } from './vendors/ScrollMagic.min.js';
+var FontFaceObserver = require('fontfaceobserver');
 
 $(document).ready(function(){
   var controller = new ScrollMagic.Controller();
 
   // word animations
-  var california = new SplitText("#ca", {type: "words,chars", position: "absolute"});
-  var calling = new SplitText("#call", {type: "words,chars", position: "absolute"});
+  var font = new FontFaceObserver("Larish Neue Semibold");
 
-  var caPos = $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
-  var callPos = $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
+  font.load().then(function() {
+    var california = new SplitText("#ca", {type: "words,chars", position: "absolute"});
+    var calling = new SplitText("#call", {type: "words,chars", position: "absolute"});
 
-  var cHeight = $("#ca").height() / 2;
+    var caPos = $("#ca").width() / 2 - california.chars[0].offsetWidth / 2;
+    var callPos = $("#call").width() / 2 - calling.chars[0].offsetWidth / 2 ;
 
-  var tl = new TimelineLite;
+    var cHeight = $("#ca").height() / 2;
 
-  TweenLite.set(california.chars, {top: cHeight,autoAlpha: 0,filter: "blur(5px)"});
-  TweenLite.set(calling.chars, {top: -cHeight,autoAlpha: 0,filter: "blur(5px)"});
-  TweenLite.set(california.words, {  marginLeft: caPos});
-  TweenLite.set(calling.words, {marginLeft: callPos});
-  TweenLite.set("#ele", {autoAlpha: 0});
-  TweenLite.set("#sfdw", {autoAlpha: 0});
-  TweenLite.set($('.line'), {autoAlpha: 0, marginTop: '-50vh'});
-  TweenLite.set($('.hero-footer'), {autoAlpha: 0, marginTop: '1%'});
+    var tl = new TimelineLite;
 
-  tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
-    .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
-    .staggerTo(california.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, caliDone)
-    .staggerTo(calling.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, callDone)
-    .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
-    .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
-    .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
-    .staggerTo("#ele", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6)
-    .staggerTo("#sfdw", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6.5)
-    .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '9s'});
+    TweenLite.set(california.chars, {top: cHeight,autoAlpha: 0,filter: "blur(5px)"});
+    TweenLite.set(calling.chars, {top: -cHeight,autoAlpha: 0,filter: "blur(5px)"});
+    TweenLite.set(california.words, {  marginLeft: caPos});
+    TweenLite.set(calling.words, {marginLeft: callPos});
+    TweenLite.set("#ele", {autoAlpha: 0});
+    TweenLite.set("#sfdw", {autoAlpha: 0});
+    TweenLite.set($('.line'), {autoAlpha: 0, marginTop: '-50vh'});
+    TweenLite.set($('.hero-footer'), {autoAlpha: 0, marginTop: '1%'});
+
+    tl.staggerTo([california.chars[0], calling.chars[0]], 1, {autoAlpha: 1, filter: "blur(0px)", delay: 2}, 0, 0)
+      .staggerTo([california.chars, calling.chars], 1, {top: 0}, 0, 3)
+      .staggerTo(california.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, caliDone)
+      .staggerTo(calling.words, 1, {marginLeft: 0, ease: Power1.easeInOut}, 0, 4, callDone)
+      .staggerTo(california.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+      .staggerTo(calling.chars, 1, {autoAlpha: 1, filter: "blur(0px)", ease: Power1.easeInOut}, 0.05, 4)
+      .to($('.line'), 0.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut})
+      .staggerTo("#ele", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6)
+      .staggerTo("#sfdw", 1, {autoAlpha: 1, ease: Power1.easeInOut}, 0, 6.5)
+      .to($('.hero-footer'), 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut, delay: '9s'});
 
 
-    function caliDone() {
-        california.revert();
-        $("#ca").removeAttr("style");
-    }
+      function caliDone() {
+          california.revert();
+          $("#ca").removeAttr("style");
+          console.log($("#ca").width());
+          console.log($("#ca").css('letter-spacing'));
+      }
 
-    function callDone() {
-        calling.revert();
-        $("#call").removeAttr("style");
-    }
+      function callDone() {
+          calling.revert();
+          $("#call").removeAttr("style");
+      }
 
-  tl.restart();
+    tl.restart();
+
+      var foot = new SplitText("#foot-copy", { type: "words,lines" });
+  TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '0.5%'})
+  TweenLite.set('#party', {autoAlpha: 0, marginTop: '0.5%'})
+  TweenLite.set('#foot-button', {autoAlpha: 0})
+
+  var foottl = new TimelineLite;
+
+  foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
+        .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
+        .to('#foot-button', 0.4, {autoAlpha: 1})
+
+  function footDone() {
+    foot.revert();
+  }
+
+  var footScene = new ScrollMagic.Scene({triggerElement: "#footer", reverse: false})
+  .setTween(foottl)
+  .addTo(controller);
+  })
 
   var storyCopy = new SplitText("#story", {type: "words,lines"});
 
@@ -119,25 +144,7 @@ if ($(window).width() >= 769) {
     ]
   });
 
-  var foot = new SplitText("#foot-copy", { type: "words,lines" });
 
-  TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '0.5%'})
-  TweenLite.set('#party', {autoAlpha: 0, marginTop: '0.5%'})
-  TweenLite.set('#foot-button', {autoAlpha: 0})
-
-  var foottl = new TimelineLite;
-
-  foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
-        .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
-        .to('#foot-button', 0.4, {autoAlpha: 1})
-
-  function footDone() {
-    foot.revert();
-  }
-
-  var footScene = new ScrollMagic.Scene({triggerElement: "#footer", reverse: false})
-  .setTween(foottl)
-  .addTo(controller);
 
   // map animations
   const wildfires = $('.wildfire');

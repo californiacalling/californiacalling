@@ -5,15 +5,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3 {
     font-family: 'Larish Neue Semibold';
-    font-weight:  normal;
-    font-style:   normal;
-    font-stretch: normal;
 }
 
 h1 {
     @include phone {
         font-size: 12.800vw;
-        letter-spacing: -0.267vw;
+        // letter-spacing: -0.267vw;
         line-height: 12.800vw;
     }
 
@@ -23,7 +20,7 @@ h1 {
 
     @include desktop {
         font-size: 7.5vw;
-        letter-spacing: 0.063vw;
+        // letter-spacing: 0.063vw;
         line-height: 6.250vw;
     }
 }
