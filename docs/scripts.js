@@ -194,8 +194,6 @@ $(document).ready(function () {
     function caliDone() {
       california.revert();
       $("#ca").removeAttr("style");
-      console.log($("#ca").width());
-      console.log($("#ca").css('letter-spacing'));
     }
 
     function callDone() {
@@ -239,28 +237,28 @@ $(document).ready(function () {
       triggerElement: "#footer",
       reverse: false
     }).setTween(foottl).addTo(controller);
-  });
-  var storyCopy = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#story", {
-    type: "words,lines"
-  });
-  var newtl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
-  gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(storyCopy.lines, {
-    autoAlpha: 0,
-    marginTop: '1%'
-  });
-  newtl.staggerTo(storyCopy.lines, 3, {
-    marginTop: 0,
-    autoAlpha: 1
-  }, 0.3, endStory);
+    var storyCopy = new _vendors_SplitText__WEBPACK_IMPORTED_MODULE_2__["SplitText"]("#story", {
+      type: "words,lines"
+    });
+    var newtl = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]();
+    gsap__WEBPACK_IMPORTED_MODULE_1__["TweenLite"].set(storyCopy.lines, {
+      autoAlpha: 0,
+      marginTop: '1%'
+    });
+    newtl.staggerTo(storyCopy.lines, 3, {
+      marginTop: 0,
+      autoAlpha: 1
+    }, 0.3, endStory);
 
-  function endStory() {
-    storyCopy.revert();
-    $('.story-copy').removeAttr('style');
-  }
+    function endStory() {
+      storyCopy.revert();
+      $('.story-copy').removeAttr('style');
+    }
 
-  var scene = new ScrollMagic.Scene({
-    triggerElement: "#story-wrap"
-  }).setTween(newtl).addTo(controller);
+    var scene = new ScrollMagic.Scene({
+      triggerElement: "#story-wrap"
+    }).setTween(newtl).addTo(controller);
+  });
   var mapTween = new gsap__WEBPACK_IMPORTED_MODULE_1__["TimelineLite"]().add([gsap__WEBPACK_IMPORTED_MODULE_1__["TweenMax"].fromTo("#map", 1, {
     marginTop: '15vw'
   }, {

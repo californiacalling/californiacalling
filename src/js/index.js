@@ -44,8 +44,6 @@ $(document).ready(function(){
       function caliDone() {
           california.revert();
           $("#ca").removeAttr("style");
-          console.log($("#ca").width());
-          console.log($("#ca").css('letter-spacing'));
       }
 
       function callDone() {
@@ -55,40 +53,44 @@ $(document).ready(function(){
 
     tl.restart();
 
-      var foot = new SplitText("#foot-copy", { type: "words,lines" });
-  TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '0.5%'})
-  TweenLite.set('#party', {autoAlpha: 0, marginTop: '0.5%'})
-  TweenLite.set('#foot-button', {autoAlpha: 0})
+    var foot = new SplitText("#foot-copy", { type: "words,lines" });
+    TweenLite.set(foot.lines, {autoAlpha: 0, marginTop: '0.5%'})
+    TweenLite.set('#party', {autoAlpha: 0, marginTop: '0.5%'})
+    TweenLite.set('#foot-button', {autoAlpha: 0})
 
-  var foottl = new TimelineLite;
+    var foottl = new TimelineLite;
 
-  foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
-        .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
-        .to('#foot-button', 0.4, {autoAlpha: 1})
+    foottl.to(party, 1, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.25)
+          .staggerTo(foot.lines, 1.5, {autoAlpha: 1, marginTop: 0, ease: Power1.easeInOut}, 0.5, 0, footDone)
+          .to('#foot-button', 0.4, {autoAlpha: 1})
 
-  function footDone() {
-    foot.revert();
-  }
+    function footDone() {
+      foot.revert();
+    }
 
-  var footScene = new ScrollMagic.Scene({triggerElement: "#footer", reverse: false})
-  .setTween(foottl)
-  .addTo(controller);
-  })
+    var footScene = new ScrollMagic.Scene({triggerElement: "#footer", reverse: false})
+    .setTween(foottl)
+    .addTo(controller);
 
-  var storyCopy = new SplitText("#story", {type: "words,lines"});
+    var storyCopy = new SplitText("#story", {type: "words,lines"});
 
-  var newtl= new TimelineLite;
+    var newtl= new TimelineLite;
 
-  TweenLite.set(storyCopy.lines, {autoAlpha: 0, marginTop: '1%'});
+    TweenLite.set(storyCopy.lines, {autoAlpha: 0, marginTop: '1%'});
 
-  newtl.staggerTo(storyCopy.lines,3,{ marginTop: 0, autoAlpha: 1},0.3, endStory);
+    newtl.staggerTo(storyCopy.lines,3,{ marginTop: 0, autoAlpha: 1},0.3, endStory);
 
     function endStory() {
       storyCopy.revert();
       $('.story-copy').removeAttr('style');
     }
 
-  var scene = new ScrollMagic.Scene({triggerElement: "#story-wrap"}).setTween(newtl).addTo(controller);
+    var scene = new ScrollMagic.Scene({triggerElement: "#story-wrap"}).setTween(newtl).addTo(controller);
+  })
+
+
+
+
 
   var mapTween = new TimelineLite().add([
     TweenMax.fromTo("#map", 1, {marginTop: '15vw'}, {marginTop: '-10vw', ease: Linear.easeNone}),

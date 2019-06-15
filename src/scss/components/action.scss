@@ -115,8 +115,6 @@
     }
 
     img:last-child {
-        // @extend .offset-phone-col-3;
-        // @extend .phone-col-8;
         @extend .offset-tablet-col-2;
         @extend .tablet-col-9;
         @extend .offset-desktop-col-11;
@@ -140,6 +138,15 @@
     h1 {
         @extend .tablet-col-5;
         @extend .desktop-col-10;
+        letter-spacing: -0.400vw;
+
+        @include tablet {
+            letter-spacing: -0.195vw;
+        }
+
+        @include desktop {
+            letter-spacing: -0.094vw;
+        }
     }
 
     p {
